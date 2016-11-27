@@ -32,7 +32,7 @@
 <meta property="og:image" content="http://kyrieliu.cn/blog-pics/kchat/thinking.jpg">
 <meta property="og:image" content="http://kyrieliu.cn/blog-pics/kchat/ucool.jpg">
 <meta property="og:image" content="http://kyrieliu.cn/blog-pics/kchat/mp.jpg">
-<meta property="og:updated_time" content="2016-11-27T03:51:09.968Z">
+<meta property="og:updated_time" content="2016-11-27T04:51:10.695Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="教你撸一个网页聊天室 | Kyrie On">
 <meta name="twitter:description" content="一些废话:)最近在学校比较闲，终于有这么一块时间可以自由支配了，所以内心还是十分的酸爽舒畅的。当然了，罪恶的事情也是有的，比如已经连续一周没有吃早饭了，其实现在回头想想，真的不能怪我啊，因为最近的天气实在是太！冷！了！好吧为了减少赖床的罪恶感，还是学(gǎo)点(diǎn)东(shì)西(qing)好了。不说废话了，还是进入正题。
@@ -287,7 +287,7 @@ classes that you can use:
 <p>当用户输入的昵称通过合法性校验以后，系统提示新加入的用户<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">io.sockets.emit(&apos;system&apos;,nickname, users.length, &apos;login&apos;);</div></pre></td></tr></table></figure></p>
 <p><em>io.sockets.emit()</em><br>的作用是向当前所有socket触发一个事件，这里要区别于<em>socket.broadcast.emit()</em>。<br>仿照上面的代码，写出当用户离开时的广播事件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">io.sockets.emit(&apos;system&apos;, nickname, users.length, &apos;logout&apos;);</div></pre></td></tr></table></figure></p>
 <p>但是要写在哪里呢？这时候，就需要在服务端额外的监听一个断开事件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">socket.on(&apos;disconnect&apos;, function()&#123;</div><div class="line">	var index = users.indexOf(socket.nickname);</div><div class="line">	users.splice(index, 1);//将断开用户的昵称从全局数组users中删除</div><div class="line">	io.sockets.emit(&apos;system&apos;, socket.nickname, users.length, &apos;logout&apos;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>至此，一个基于Node.js的聊天室就算撸成了，当然还有许多可以优化的地方，不过核心功能也就这些，能看到这里的都是好汉，因为自己写完看了一遍，感觉真像是老太太的裹脚布——又臭又长:new_moon_with_face:<br>好啦，最后打个广告，诶我就不说是什么，好奇的童鞋自己扫扫看吧~<br><img src="http://kyrieliu.cn/blog-pics/kchat/mp.jpg" alt="马男刘凯里"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>至此，一个基于Node.js的聊天室就算撸成了，当然还有许多可以优化的地方，不过核心功能也就这些，能看到这里的都是好汉，因为自己写完看了一遍，感觉真像是老太太的裹脚布——又臭又长<br>好啦，最后打个广告，诶我就不说是什么，好奇的童鞋自己扫扫看吧~<br><img src="http://kyrieliu.cn/blog-pics/kchat/mp.jpg" alt="马男刘凯里"></p>
 
   </section>
 
