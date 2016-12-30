@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      高性能JS-加载和执行 | Kyrie On 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="kyrieliu">
+    
+    
+
+    <meta name="description" content="前言
+kyrieliuの《高性能JavaScript》读书笔记。  
+
+script标签是一个很“霸道”的狠角色，它的每次出现都让页面等待脚本的解析和执行。也就是说，不管当前的javascript代码是内嵌还是包含在外链文件中，页面的下载和渲染都必须停下来等待脚本执行完成。其实，script标签的“霸道”是必须的，因为页面的生存周期中，脚本的执行可能会修改页面的内容。总之，在解析和执行js的这个过">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高性能JS-加载和执行 | Kyrie On">
+<meta property="og:url" content="http://kyrieliu.cn/huno/2016/12/30/HPJS-vol-1/index.html">
+<meta property="og:site_name" content="Kyrie On">
+<meta property="og:description" content="前言
+kyrieliuの《高性能JavaScript》读书笔记。  
+
+script标签是一个很“霸道”的狠角色，它的每次出现都让页面等待脚本的解析和执行。也就是说，不管当前的javascript代码是内嵌还是包含在外链文件中，页面的下载和渲染都必须停下来等待脚本执行完成。其实，script标签的“霸道”是必须的，因为页面的生存周期中，脚本的执行可能会修改页面的内容。总之，在解析和执行js的这个过">
+<meta property="og:updated_time" content="2016-12-30T15:38:58.814Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="高性能JS-加载和执行 | Kyrie On">
+<meta name="twitter:description" content="前言
+kyrieliuの《高性能JavaScript》读书笔记。  
+
+script标签是一个很“霸道”的狠角色，它的每次出现都让页面等待脚本的解析和执行。也就是说，不管当前的javascript代码是内嵌还是包含在外链文件中，页面的下载和渲染都必须停下来等待脚本执行完成。其实，script标签的“霸道”是必须的，因为页面的生存周期中，脚本的执行可能会修改页面的内容。总之，在解析和执行js的这个过">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/huno/favicon.png">
+    
+    <link rel="stylesheet" href="/huno/css/uno.css">
+    <link rel="stylesheet" href="/huno/css/highlight.css">
+    <link rel="stylesheet" href="/huno/css/archive.css">
+    <link rel="stylesheet" href="/huno/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Kyrie On</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/huno/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/huno/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">高性能JS-加载和执行</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-12-30" class="post-meta__date date">2016-12-30</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+            <font class="categories">
+            &#8226; 分类:
+            <a class="categories-link" href="/huno/categories/fe/">fe</a>
+            </font>
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>kyrieliuの《高性能JavaScript》读书笔记。  </p>
+</blockquote>
+<p>script标签是一个很“霸道”的狠角色，它的每次出现都让页面等待脚本的解析和执行。也就是说，不管当前的javascript代码是内嵌还是包含在外链文件中，页面的下载和渲染都必须停下来等待脚本执行完成。<br>其实，script标签的“霸道”是必须的，<strong>因为页面的生存周期中，脚本的执行可能会修改页面的内容。</strong><br>总之，在解析和执行js的这个过程中，页面渲染和用户交互完全被阻塞了。  </p>
+<h2 id="脚本位置"><a href="#脚本位置" class="headerlink" title="脚本位置"></a>脚本位置</h2><p>说起脚本的位置，脑海里不禁想起来那两句真言：  </p>
+<ol>
+<li>css放在<code>&lt;head&gt;</code>里  </li>
+<li>js放在<code>&lt;/body&gt;</code>前  </li>
+</ol>
+<p>至于why呢，举个栗砸：  </p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">html</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">head</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">title</span>&gt;</span>一个栗子<span class="tag">&lt;/<span class="name">title</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">'text/javascript'</span> <span class="attr">src</span>=<span class="string">'js_file_1.js'</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">'text/javascript'</span> <span class="attr">src</span>=<span class="string">'js_file_2.js'</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">'text/javascript'</span> <span class="attr">src</span>=<span class="string">'js_file_3.js'</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">'stylesheet'</span> <span class="attr">type</span>=<span class="string">'text/css'</span> <span class="attr">href</span>=<span class="string">'css_file.css'</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="name">head</span>&gt;</span>
+
+    <span class="tag">&lt;<span class="name">body</span>&gt;</span>
+        <span class="tag">&lt;<span class="name">p</span>&gt;</span>hello from kyrieliu.<span class="tag">&lt;/<span class="name">p</span>&gt;</span>
+    <span class="tag">&lt;/<span class="name">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">html</span>&gt;</span>
+</code></pre>
+<p>这一段看似正常的代码实际上有着肥肠严重的性能问题：在head中加载了三个js文件。<br>前面我有说到，<strong>js文件会阻塞页面渲染</strong>，知道它们全部下载并执行完毕后，页面渲染才能继续（无情无耻无理取闹）。<br>纵观一份html文档，用户真正看得见的内容基本上都写在body标签里，也就是说，浏览器在解析到body标签之前，不会渲染页面的任何部分。现在又写了三个脚本到head标签里面，好嘞，这下子渲染的延迟更明显了，用户在打开这样的一个页面时，看到了what？白屏！用户不能浏览页面的内容，更无法与页面进行交互。  </p>
+<h3 id="场景还原"><a href="#场景还原" class="headerlink" title="场景还原"></a>场景还原</h3><p>第一个js文件开始下载，与此同时阻塞了页面其他文件的下载。等呀等，ok，第一个js文件终于下载完了，第二个js按捺不住自己喜悦的心情，正要开始下载，突然，第一个js文件说：“且慢，老子还没有完事呢”，第二个js文件吓了一跳，站在原地不动。第一个js文件开始执行，等到执行完毕，第二个js文件才得以开始下载。<br>总之，<strong>每个文件必须等到前一个文件下载并执行完成才会开始下载</strong>。<br>在这些文件”one by one”的下载执行过程中，用户看到的则是一片空白。  </p>
+<h3 id="不是那么好的好消息"><a href="#不是那么好的好消息" class="headerlink" title="不是那么好的好消息"></a>不是那么好的好消息</h3><p>IE8/Firefox3.5/Safari 4/Chrome 2都允许并行下载js文件，也就是说，script标签在下载外部资源时，不会阻塞其他的script标签。<br>遗憾的是：  </p>
+<ol>
+<li>js文件的下载过程仍然会阻塞其他资源的下载，比如图片。</li>
+<li>页面仍然必须等到所有js代码下载并执行完毕才能继续渲染。  </li>
+</ol>
+<p>因此，尽管浏览器通过允许并行下载提高了性能，但<strong>脚本阻塞仍然是一个问题</strong>。<br>综上，推荐将所有的script标签尽可能的放在body标签的底部，以尽量减少对整个页面渲染的影响。  </p>
+<h2 id="组织脚本"><a href="#组织脚本" class="headerlink" title="组织脚本"></a>组织脚本</h2><p>既然每个script标签初始下载时都会阻塞页面渲染，那么我们可以通过减少页面上script标签的数量来改善这一情况。不光是外链的脚本，内嵌脚本的数量同样也要限制（毕竟执行js代码也会阻塞页面的渲染）。<br>多于外链的脚本，这里的情况有一点需要额外注意的地方：考虑HTTP请求会带来额外的性能开销，所以下载单个100kb的文件要比下载四个25kb的文件更快。从这个角度出发，更能说明减少外链脚本文件的数量将会改善性能。<br>What u should do？合并脚本！  </p>
+<h2 id="无阻塞的脚本"><a href="#无阻塞的脚本" class="headerlink" title="无阻塞的脚本"></a>无阻塞的脚本</h2><p>随着web应用的功能越丰富，所需要的js代码就越多，所以精简源代码也并不总是可行。尽管下载单个较大的js文件只产生一次HTTP请求，但这样做却会锁死浏览器一大段时间。<br>为了避免这种情况，需要向页面中逐步加载js文件，这样做，在某种程度上来说不会阻塞浏览器。  </p>
+<h3 id="延迟的脚本"><a href="#延迟的脚本" class="headerlink" title="延迟的脚本"></a>延迟的脚本</h3><p>HTML4为script标签定义了一个扩展属性：defer。<strong>Defer表明本元素所含的脚本不会修改DOM，因此代码能安全的延迟执行</strong>。<br>带有defer属性的script标签可以放在文档的任何位置（不会阻塞浏览器的其他进程，此类文件可以与页面中的其他资源并行下载），对应的js代码将在页面解析到script标签时开始下载，但并不会执行，（onload事件被出发前）才会执行。<br>PS：截至这本书的第一版（2010年11月），这个属性对IE和Firefox的支持性比较好（我的天居然有IE），如果真要投入到实际的项目中，不妨先去检查一下浏览器的兼容性先~  </p>
+<h3 id="动态脚本元素"><a href="#动态脚本元素" class="headerlink" title="动态脚本元素"></a>动态脚本元素</h3><pre><code class="javascript"><span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);
+script.type = <span class="string">'text/javascript'</span>;
+script.src = <span class="string">'js_file.js'</span>;
+<span class="built_in">document</span>.getElementsByTagName(<span class="string">'body'</span>)[<span class="number">0</span>].appendChild(script);
+</code></pre>
+<p>Firefox/Opera/Chrome和Safari 3+会在script元素接收完成时出发一个load事件，所以你可以通过监听这个事件来获得脚本加载完成时的状态：  </p>
+<pre><code class="javascript">script.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    <span class="built_in">console</span>.log(<span class="string">'script loaded.'</span>);
+}
+</code></pre>
+<p>一向特立独行的IE自然有他的另一套：触发一个readystatechange事件。script元素提供一个readyState属性，有以下五种取值：  </p>
+<ol>
+<li>“uninitialized”</li>
+<li>“loading”</li>
+<li>“loaded”</li>
+<li>“interactive” 数据完成下载但尚不可用</li>
+<li>“complete”  </li>
+</ol>
+<p>所以，  </p>
+<pre><code class="javascript">script.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    <span class="keyword">if</span> (script.readyState == <span class="string">'loaded'</span> || script.readyState == <span class="string">'complete'</span>){
+        script.onreadystatechange = <span class="literal">null</span>;
+        <span class="built_in">console</span>.log(<span class="string">'script loaded.'</span>);
+    }
+}
+</code></pre>
+<p>至此，我们得到了一个可以应用于广泛浏览器的动态加载脚本用的函数：  </p>
+<pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">loadScript</span>(<span class="params">url, callback</span>)</span>{
+    <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);
+    script.type = <span class="string">'text/javascript'</span>;
+
+    <span class="keyword">if</span> (script.readyState){<span class="comment">//IE</span>
+        script.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+            <span class="keyword">if</span> (script.readyState == <span class="string">'loaded'</span> || script.readyState == <span class="string">'complete'</span>){
+                script.onreadystatechange = <span class="literal">null</span>;
+                callback();
+            }
+        }
+    }<span class="keyword">else</span>{
+        script.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+            callback();
+        }
+    }
+}
+</code></pre>
+<p>可以这么用：  </p>
+<pre><code class="javascript">loadScript(<span class="string">'file.js'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    <span class="built_in">console</span>.log(<span class="string">'script loaded.'</span>);
+});
+</code></pre>
+<p>也可以这么用：  </p>
+<pre><code class="javascript">loadScript(<span class="string">'file_1.js'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    loadScript(<span class="string">'file_2.js'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        loadScript(<span class="string">'file_3.js'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+            <span class="built_in">console</span>.log(<span class="string">'all files are loaded.'</span>);
+        });
+    });
+});
+</code></pre>
+<h3 id="XMLHttpRequest脚本注入"><a href="#XMLHttpRequest脚本注入" class="headerlink" title="XMLHttpRequest脚本注入"></a>XMLHttpRequest脚本注入</h3><p>标题看起来很高大上的样子，其实就是Ajax。  </p>
+<pre><code class="javascript"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();
+xhr.open(<span class="string">'get'</span>,<span class="string">'file.js'</span>,<span class="literal">true</span>);
+xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    <span class="keyword">if</span> (xhr.readyState == <span class="number">4</span>){
+        <span class="keyword">if</span> (xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span> || xhr.status == <span class="number">304</span>){
+            <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);
+            script.type = <span class="string">'text/javascript'</span>;
+            script.text = xhr.responseText;
+            <span class="built_in">document</span>.body.appendChild(script);
+        }
+    }
+};
+xhr.send(<span class="literal">null</span>);
+</code></pre>
+<p>局限：跨域问题。  </p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul>
+<li>body闭合标签之前，将所有的script标签放到页面底部。这样能确保在脚本执行前页面已经完成了渲染。</li>
+<li>合并脚本。页面中的script标签越少，加载也就越快，响应也更迅速。</li>
+<li>无阻塞下载js：  <ol>
+<li>script标签的defer属性</li>
+<li>动态创建script元素来下载并执行代码</li>
+<li>使用XHR对象下载js代码并注入页面中。</li>
+</ol>
+</li>
+</ul>
+
+  </section>
+
+  
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/huno/js/jquery.min.js"></script>
+    <script src="/huno/js/main.js"></script>
+    <script src="/huno/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/huno/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
