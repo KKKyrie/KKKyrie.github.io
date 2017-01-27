@@ -231,6 +231,178 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://kyrieliu.cn/huno/huno/2017/01/27/browser-caching/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="劉凯里">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="http://kyrieliu.cn/images/kyrieliu.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Kyrie On">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Kyrie On" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/huno/2017/01/27/browser-caching/" itemprop="url">
+                  除夕谈浏览器缓存
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-27T16:59:24+08:00">
+                2017-01-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/huno/categories/fe/" itemprop="url" rel="index">
+                    <span itemprop="name">fe</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="什么是浏览器缓存？"><a href="#什么是浏览器缓存？" class="headerlink" title="什么是浏览器缓存？"></a>什么是浏览器缓存？</h2><p><img src="http://img.caibaojian.com/uploads/2016/02/http-cache1.png" alt="browser caching"><br><strong>Browser Caching</strong> 是浏览器将网络资源存储在本地的一种行为。<br>优点有：  </p>
+<ol>
+<li>减少冗余数据的传输</li>
+<li>减轻服务器的压力</li>
+<li>缩短网页的加载速度</li>
+</ol>
+<p>可以看出，浏览器缓存与性能优化有着千丝万缕的联系。  </p>
+<h3 id="浏览器缓存的分类"><a href="#浏览器缓存的分类" class="headerlink" title="浏览器缓存的分类"></a>浏览器缓存的分类</h3><ol>
+<li>协商缓存</li>
+<li>强缓存  </li>
+</ol>
+<p>听名字可以看出来，这两类缓存，一个属于细心的暖男，另一个则是强硬的霸道总裁。<br>好，参照<a href="http://caibaojian.com/browser-cache.html" target="_blank" rel="external">这篇文章</a>，我们先来了解一下浏览器缓存的过程：  </p>
+<ol>
+<li>首先，浏览器会去检查该资源有关缓存的HTTP Header。一个expires，一个cache-control，看是否命中<strong>强缓存</strong>。如果命中则直接从缓存中得到该资源（这次请求不会和服务端进行通信）。</li>
+<li>如果走到了这一步，说明我们的霸道总裁没有被翻牌子，那么<strong>协商缓存</strong>这个暖男就该出动了。浏览器会发送一个请求到服务端，这个请求会携带<del>一些东西</del>上一次请求返回的<strong>有关缓存的header字段</strong>（Last-Modified/If-Modified-Since、Etag/IF-None-Match），服务端拿到这些信息后，对比结果看是否命中协商缓存。如果命中，服务端只返回新的响应header更新缓存中的对应header信息（不返回对应资源），浏览器get到以后直接从缓存中取得该资源；若没有命中，服务端返回最新的资源内容。  </li>
+</ol>
+<h2 id="强缓存"><a href="#强缓存" class="headerlink" title="强缓存"></a>强缓存</h2><p>先来看看这个霸道总裁好了。<br>强缓存主要利用Http Response Header中的两个字段来控制，分别是<strong>Expires</strong>和<strong>Cache-Control</strong>。  </p>
+<h3 id="Expires"><a href="#Expires" class="headerlink" title="Expires"></a>Expires</h3><p>Expires的值是一个绝对时间的字符串，GMT格式，比如：Expires:Thu, 26 Jan 2017 23:39:02 GMT。这个时间表示的是该资源的有效期限，当请求处于这个时间之前时，均视为命中缓存。<br>缺点：因为这个时间表示的是资源过期的时间，所以当客户端和服务端有较大的时间偏差时，咳咳，情况就不妙了。  </p>
+<h3 id="Cache-Control"><a href="#Cache-Control" class="headerlink" title="Cache-Control"></a>Cache-Control</h3><p>Cache-Control是HTTP1.1时出现的头信息，主要利用其max-age的值来进行判断，Cache-Control:max-age=1800，表明这个资源的有效期是1800秒，不难看出，和Expires不同，这是一个相对时间。  </p>
+<h2 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h2><p>所谓协商缓存，就是协商嘛，这种情况下客户端和服务端地位是平等的，不像之前说的强缓存，服务端一个header字段，浏览器就要唯命是从。<br>准确的讲，  </p>
+<blockquote>
+<p>协商缓存是由服务端来确定缓存资源是否可用，这个情况下，需要客户端与服务端通过某种标识来进行通信，从而让服务端判断请求的资源是否可以通过缓存来访问。  </p>
+</blockquote>
+<p>这个过程涉及到两组字段（成对出现的字段）：  </p>
+<ol>
+<li>Last-Modified and If-Modified-Since</li>
+<li>Etag and If-None-Match</li>
+</ol>
+<p>上述1和2中的前者都是在第一次请求的响应头中存在的字段，后者则均存在于后续请求的请求Header中。<br>成对出现的表现在于：<strong>如果响应头中没有前者，则后续的请求头不会有后者</strong>。  </p>
+<h3 id="Last-Modified-If-Modified-Since"><a href="#Last-Modified-If-Modified-Since" class="headerlink" title="Last Modified/If-Modified-Since"></a>Last Modified/If-Modified-Since</h3><p>当服务端接收到来自浏览器的第一个请求时，服务端在响应的头中会带上Last-Modified，是一个GMT的时间字符串，代表着该资源的最后修改时间，例如Last-Modified: Wed, 26 Jan 2017 00:35:11 GMT。<br>当浏览器再次请求相同的资源时，请求的头中会包含一个If-Modified-Since，这个值就是第一次请求该资源时返回的Last-Modified。服务端会拿这个字段的值和资源上次修改的时间进行对比，如果相同，则说明资源没有改变，即命中缓存，此时返回304，不会返回相应的资源和Last-Modified。  </p>
+<h3 id="Etag-If-None-Match"><a href="#Etag-If-None-Match" class="headerlink" title="Etag/If-None-Match"></a>Etag/If-None-Match</h3><p>和上一对不同的是，这一对字段的值不是时间，而是一个校验码。Etag保证每个网络资源都是唯一的，资源变化都会导致Etag的变化。当服务端再次收到请求时，根据客户端上送的If-None-Match来进行判断，看是否命中协商缓存（过程与Last-Modified/If-Modified-Since相似）。<br><strong>当两对字段一起使用时，Etag的优先级大于Last-Modified。</strong>  </p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>今天是大年三十，那就祝你鸡年大吉吧:)</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://kyrieliu.cn/huno/huno/2017/01/25/my-2016/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1774,7 +1946,7 @@ gulp.task(<span class="string">'default'</span>,[<span class="string">'bundle'</
           
             <div class="site-state-item site-state-posts">
               <a href="/huno/archives">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
