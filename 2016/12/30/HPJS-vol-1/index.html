@@ -96,7 +96,7 @@ script标签是一个很“霸道”的狠角色，它的每次出现都让页�
 kyrieliuの《高性能JavaScript》读书笔记。  
 
 script标签是一个很“霸道”的狠角色，它的每次出现都让页面等待脚本的解析和执行。也就是说，不管当前的javascript代码是内嵌还是包含在外链文件中，页面的下载和渲染都必须停下来等待脚本执行完成。其实，script标签的“霸道”是必须的，因为页面的生存周期中，脚本的执行可能会修改页面的内容。总之，在解析和执行js的这个过">
-<meta property="og:updated_time" content="2017-02-24T07:09:07.445Z">
+<meta property="og:updated_time" content="2017-02-24T07:20:57.301Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="加载和执行JS的正确姿势">
 <meta name="twitter:description" content="前言
@@ -368,7 +368,7 @@ script标签是一个很“霸道”的狠角色，它的每次出现都让页�
 <li>页面仍然必须等到所有js代码下载并执行完毕才能继续渲染。  </li>
 </ol>
 <p>因此，尽管浏览器通过允许并行下载提高了性能，但<strong>脚本阻塞仍然是一个问题</strong>。<br>综上，推荐将所有的script标签尽可能的放在body标签的底部，以尽量减少对整个页面渲染的影响。  </p>
-<h2 id="组织脚本"><a href="#组织脚本" class="headerlink" title="组织脚本"></a>组织脚本</h2><p>既然每个script标签初始下载时都会阻塞页面渲染，那么我们可以通过减少页面上script标签的数量来改善这一情况。不光是外链的脚本，内嵌脚本的数量同样也要限制（毕竟执行js代码也会阻塞页面的渲染）。<br>多于外链的脚本，这里的情况有一点需要额外注意的地方：考虑HTTP请求会带来额外的性能开销，所以下载单个100kb的文件要比下载四个25kb的文件更快。从这个角度出发，更能说明减少外链脚本文件的数量将会改善性能。<br>What u should do？合并脚本！  </p>
+<h2 id="组织脚本"><a href="#组织脚本" class="headerlink" title="组织脚本"></a>组织脚本</h2><p>既然每个script标签初始下载时都会阻塞页面渲染，那么我们可以通过减少页面上script标签的数量来改善这一情况。不光是外链的脚本，内嵌脚本的数量同样也要限制（毕竟执行js代码也会阻塞页面的渲染）。<br>对于外链的脚本，这里的情况有一点需要额外注意的地方：考虑HTTP请求会带来额外的性能开销，所以下载单个100kb的文件要比下载四个25kb的文件更快。从这个角度出发，更能说明减少外链脚本文件的数量将会改善性能。<br>What u should do？合并脚本！  </p>
 <h2 id="无阻塞的脚本"><a href="#无阻塞的脚本" class="headerlink" title="无阻塞的脚本"></a>无阻塞的脚本</h2><p>随着web应用的功能越丰富，所需要的js代码就越多，所以精简源代码也并不总是可行。尽管下载单个较大的js文件只产生一次HTTP请求，但这样做却会锁死浏览器一大段时间。<br>为了避免这种情况，需要向页面中逐步加载js文件，这样做，在某种程度上来说不会阻塞浏览器。  </p>
 <h3 id="延迟的脚本"><a href="#延迟的脚本" class="headerlink" title="延迟的脚本"></a>延迟的脚本</h3><p>HTML4为script标签定义了一个扩展属性：defer。<strong>Defer表明本元素所含的脚本不会修改DOM，因此代码能安全的延迟执行</strong>。<br>带有defer属性的script标签可以放在文档的任何位置（不会阻塞浏览器的其他进程，此类文件可以与页面中的其他资源并行下载），对应的js代码将在页面解析到script标签时开始下载，但并不会执行，（onload事件被出发前）才会执行。<br>PS：截至这本书的第一版（2010年11月），这个属性对IE和Firefox的支持性比较好（我的天居然有IE），如果真要投入到实际的项目中，不妨先去检查一下浏览器的兼容性先~  </p>
 <h3 id="动态脚本元素"><a href="#动态脚本元素" class="headerlink" title="动态脚本元素"></a>动态脚本元素</h3><pre><code class="javascript"><span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);
