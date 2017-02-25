@@ -84,22 +84,22 @@
 
 
 
-<meta name="description" content="动机背景： 单页应用，js需要管理很多state。两个概念： 变化和异步和React相结合： React在视图层禁止异步并直接操作DOM，Redux处理state中的数据。目的： Redux试图让state变化的可预测。  
-三大原则单一数据源注意理解：整个应用的state被储存在一棵object tree中，并且这个object tree只存在于唯一一个store中。
-State是只读的唯一改变">
+<meta name="description" content="title: 浏览器你为什么要干掉我的请求date: 2017-02-25 12:24:11
+categories: fe前两天发现了一个对于我而言比较猎奇的事情：在点击跳转连接之后，新打开的页面出现异常（本来是要直接跳转到网页版qq的，结果白屏），顺手F12了一下，看到一个红色的请求，哦原来是有请求失败了呀，再仔细一看…这个请求返回的status是canceled，奇怪哦，被cancel掉了。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Redux学习笔记-Vol.1-介绍">
-<meta property="og:url" content="http://kyrieliu.cn/huno/2016/12/08/redux-vol-1/index.html">
+<meta property="og:title" content="Kyrie On">
+<meta property="og:url" content="http://kyrieliu.cn/huno/2017/02/25/browser-why/index.html">
 <meta property="og:site_name" content="Kyrie On">
-<meta property="og:description" content="动机背景： 单页应用，js需要管理很多state。两个概念： 变化和异步和React相结合： React在视图层禁止异步并直接操作DOM，Redux处理state中的数据。目的： Redux试图让state变化的可预测。  
-三大原则单一数据源注意理解：整个应用的state被储存在一棵object tree中，并且这个object tree只存在于唯一一个store中。
-State是只读的唯一改变">
-<meta property="og:updated_time" content="2016-12-30T15:39:07.925Z">
+<meta property="og:description" content="title: 浏览器你为什么要干掉我的请求date: 2017-02-25 12:24:11
+categories: fe前两天发现了一个对于我而言比较猎奇的事情：在点击跳转连接之后，新打开的页面出现异常（本来是要直接跳转到网页版qq的，结果白屏），顺手F12了一下，看到一个红色的请求，哦原来是有请求失败了呀，再仔细一看…这个请求返回的status是canceled，奇怪哦，被cancel掉了。">
+<meta property="og:image" content="https://raw.githubusercontent.com/KKKyrie/markdown-pics/master/brow_cancel_req/cancel.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/KKKyrie/markdown-pics/master/brow_cancel_req/answerfromsof.png">
+<meta property="og:updated_time" content="2017-02-25T04:25:31.069Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Redux学习笔记-Vol.1-介绍">
-<meta name="twitter:description" content="动机背景： 单页应用，js需要管理很多state。两个概念： 变化和异步和React相结合： React在视图层禁止异步并直接操作DOM，Redux处理state中的数据。目的： Redux试图让state变化的可预测。  
-三大原则单一数据源注意理解：整个应用的state被储存在一棵object tree中，并且这个object tree只存在于唯一一个store中。
-State是只读的唯一改变">
+<meta name="twitter:title" content="Kyrie On">
+<meta name="twitter:description" content="title: 浏览器你为什么要干掉我的请求date: 2017-02-25 12:24:11
+categories: fe前两天发现了一个对于我而言比较猎奇的事情：在点击跳转连接之后，新打开的页面出现异常（本来是要直接跳转到网页版qq的，结果白屏），顺手F12了一下，看到一个红色的请求，哦原来是有请求失败了呀，再仔细一看…这个请求返回的status是canceled，奇怪哦，被cancel掉了。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/KKKyrie/markdown-pics/master/brow_cancel_req/cancel.png">
 
 
 
@@ -127,13 +127,13 @@ State是只读的唯一改变">
 
 
 
-  <link rel="canonical" href="http://kyrieliu.cn/huno/2016/12/08/redux-vol-1/"/>
+  <link rel="canonical" href="http://kyrieliu.cn/huno/2017/02/25/browser-why/"/>
 
 
 
 
 
-  <title> Redux学习笔记-Vol.1-介绍 | Kyrie On </title>
+  <title>  | Kyrie On </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -236,7 +236,7 @@ State是只读的唯一改变">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://kyrieliu.cn/huno/huno/2016/12/08/redux-vol-1/">
+  <link itemprop="mainEntityOfPage" href="http://kyrieliu.cn/huno/huno/2017/02/25/browser-why/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="劉凯里">
@@ -260,7 +260,7 @@ State是只读的唯一改变">
             
             
               
-                Redux学习笔记-Vol.1-介绍
+                
               
             
           </h1>
@@ -275,8 +275,8 @@ State是只读的唯一改变">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-08T11:11:11+08:00">
-                2016-12-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-25T12:25:31+08:00">
+                2017-02-25
               </time>
             
 
@@ -285,28 +285,6 @@ State是只读的唯一改变">
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/huno/categories/fe/" itemprop="url" rel="index">
-                    <span itemprop="name">fe</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -333,53 +311,25 @@ State是只读的唯一改变">
       
 
       
-        <h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><p>背景： 单页应用，<strong>js需要管理很多state</strong>。<br>两个概念： 变化和异步<br>和React相结合： React在视图层禁止异步并直接操作DOM，Redux处理state中的数据。<br>目的： <strong>Redux试图让state变化的可预测</strong>。  </p>
-<h2 id="三大原则"><a href="#三大原则" class="headerlink" title="三大原则"></a>三大原则</h2><h3 id="单一数据源"><a href="#单一数据源" class="headerlink" title="单一数据源"></a>单一数据源</h3><p>注意理解：<strong>整个应用的state被储存在一棵object tree中，并且这个object tree只存在于唯一一个store中。</strong></p>
-<h3 id="State是只读的"><a href="#State是只读的" class="headerlink" title="State是只读的"></a>State是只读的</h3><p><strong>唯一改变state的方法就是触发action，action是一个用于描述已发生事件的普通对象。</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">store.dispatch(&#123;</div><div class="line">    <span class="attr">type</span>: <span class="string">'ADD_ITEM'</span>,<span class="comment">//规定一个action对象中必须有的type属性</span></div><div class="line">    index: <span class="number">1</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h3 id="使用纯函数来执行修改"><a href="#使用纯函数来执行修改" class="headerlink" title="使用纯函数来执行修改"></a>使用纯函数来执行修改</h3><p>为了描述action如何改变state tree，需要编写<strong>reducers</strong>。<br>什么是reducers？</p>
+        <hr>
+<p>title: 浏览器你为什么要干掉我的请求<br>date: 2017-02-25 12:24:11</p>
+<h2 id="categories-fe"><a href="#categories-fe" class="headerlink" title="categories: fe"></a>categories: fe</h2><p>前两天发现了一个对于我而言比较猎奇的事情：在点击跳转连接之后，新打开的页面出现异常（本来是要直接跳转到网页版qq的，结果白屏），顺手F12了一下，看到一个红色的请求，哦原来是有请求失败了呀，再仔细一看…这个请求返回的status是<strong>canceled</strong>，奇怪哦，被cancel掉了。<br><img src="https://raw.githubusercontent.com/KKKyrie/markdown-pics/master/brow_cancel_req/cancel.png" alt="被cancel掉的无辜请求"><br>浏览器你就不能矜矜业业的好好发送请求吗？<br>待我平静下来，去sf上面找答案，在经过几次超链的跳转之后，我来到了一个满是English的页面，虽然本人英语还算不差，但是当时心浮气躁，没看两眼就关掉了。（那个时候的我只想当一个无脑的伸手党…巴不得有人可以给我活灵活现的讲解一下…）<br>最后去求助了一位好盆友，才知道了这个问题的答案，不卖关子，先来解答。</p>
+<p>stack<strong>overflow</strong>上面的最高票回答：<br><img src="https://raw.githubusercontent.com/KKKyrie/markdown-pics/master/brow_cancel_req/answerfromsof.png" alt="stackoverflow"><br>划个重点：  </p>
 <blockquote>
-<p>纯函数，形如：(state, action) =&gt; state  </p>
+<ol>
+<li>The DOM element that caused the request to be made got deleted (i.e. an IMG is being loaded, but before the load happened, you deleted the IMG node)  </li>
+<li>You did something that made loading the data unnecessary. (i.e. you started loading a iframe, then changed the src or overwrite the contents)  </li>
+<li>There are lots of requests going to the same server, and a network problem on earlier requests showed that subsequent requests weren’t going to work (DNS lookup error, earlier (same) request resulted e.g. HTTP 400 error code, etc)  </li>
+</ol>
 </blockquote>
-<p>随着应用的变大，注意将一个大的reducer拆分为多个小的reducers，分别独立操作state tree的不同部分。  </p>
-<pre><code class="javascript"><span class="comment">//reducer 1</span>
-<span class="function"><span class="keyword">function</span> <span class="title">visibilityFilter</span>(<span class="params">state = <span class="string">'SHOW_ALL'</span>, action</span>)</span>{
-    <span class="keyword">switch</span> (action.type){
-        <span class="keyword">case</span> <span class="string">'SET_VISIBILITY_FILTER'</span>:
-            <span class="keyword">return</span> action.filter;
-        <span class="keyword">default</span>:<span class="comment">//一定要有！不然会造成返回undefined的情况</span>
-            <span class="keyword">return</span> state;
-    }
-}
-
-<span class="comment">//reducer 2</span>
-<span class="function"><span class="keyword">function</span> <span class="title">todos</span>(<span class="params">action = [], action</span>)</span>{
-    <span class="keyword">switch</span> (action.type){
-        <span class="keyword">case</span> <span class="string">'ADD_TODO'</span>:
-            <span class="keyword">return</span> [
-                ...state,<span class="comment">//ES6大法好!</span>
-                {
-                    <span class="attr">text</span>: action.text,
-                    <span class="attr">complete</span>: <span class="literal">false</span>
-                }
-            ];
-        <span class="keyword">case</span> <span class="string">'COMPLETE_TODO'</span>:
-            <span class="keyword">return</span> state.map(<span class="function">(<span class="params">todo, index</span>) =&gt;</span> {
-                <span class="keyword">if</span> (index == action.index){
-                    <span class="keyword">return</span> <span class="built_in">Object</span>.assign({}, todo, {
-                        <span class="attr">complete</span>: <span class="literal">true</span>
-                    });
-                }
-                <span class="keyword">return</span> todo;
-            });
-        <span class="keyword">default</span>:
-            <span class="keyword">return</span> state;
-    }
-}
-
-<span class="keyword">import</span> { combineReducers, createStore } <span class="keyword">from</span> <span class="string">'redux'</span>;
-<span class="keyword">let</span> reducer = combineReducers({ visbilityFilter, todos });
-<span class="keyword">let</span> store = createStore(reducer);
-</code></pre>
+<p>根据上面所说的，浏览器之所以会干掉请求，有以下<strong>三种原因</strong>：  </p>
+<ul>
+<li>发起这次请求的DOM元素被删除了。（eg：一个img元素节点，在图片加载完成之前就不幸被删掉了）  </li>
+<li>开发者做了一些使加载数据变得不必要的事情。（eg：你加载了一个iframe，接着直接改变了src或者用document.write重写了内容）  </li>
+<li>有大量的请求指向同一个服务器，之前请求的错误表明相同后续的请求是行不通的（DNS查询错误、或是排在前面诶对相同请求是有错误的，比如400状态码）  </li>
+</ul>
+<p>经过这个事情，不仅get到了一个新姿势，而且更重要的是获得到的反思。<br>感谢我的好友<strong>磊磊</strong>用实际行动告诉我：<strong>忌浮躁</strong>。  </p>
+<p>但是并不是每个故事都有一个happy ending，我在一开始说的页面白屏问题还没有得到解决，更奇怪的是…周围同事们都纷纷表示这个页面没问题…我也没配host啊…不过已经可以基本锁定是我这边出的问题了…如果你有类似的情况…我可以求你赐个教吗…</p>
 
       
     </div>
@@ -411,8 +361,8 @@ State是只读的唯一改变">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/huno/2016/12/06/writing-react-with-gulp/" rel="next" title="纵享丝滑 | React with gulp">
-                <i class="fa fa-chevron-left"></i> 纵享丝滑 | React with gulp
+              <a href="/huno/2017/02/23/ofo/" rel="next" title="ofo：宝宝心里苦，但宝宝不说">
+                <i class="fa fa-chevron-left"></i> ofo：宝宝心里苦，但宝宝不说
               </a>
             
           </div>
@@ -420,10 +370,6 @@ State是只读的唯一改变">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/huno/2016/12/12/redux-vol-2/" rel="prev" title="Redux学习笔记-Vol.2-基础">
-                Redux学习笔记-Vol.2-基础 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -559,7 +505,7 @@ State是只读的唯一改变">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#动机"><span class="nav-number">1.</span> <span class="nav-text">动机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三大原则"><span class="nav-number">2.</span> <span class="nav-text">三大原则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单一数据源"><span class="nav-number">2.1.</span> <span class="nav-text">单一数据源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#State是只读的"><span class="nav-number">2.2.</span> <span class="nav-text">State是只读的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用纯函数来执行修改"><span class="nav-number">2.3.</span> <span class="nav-text">使用纯函数来执行修改</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#categories-fe"><span class="nav-number">1.</span> <span class="nav-text">categories: fe</span></a></li></ol></div>
             
 
           </div>
