@@ -257,7 +257,7 @@
               
                 
                 <a class="post-title-link" href="/huno/2017/02/25/browser-why/" itemprop="url">
-                  未命名
+                  浏览器你为什么要干掉我的请求？
                 </a>
               
             
@@ -273,7 +273,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-25T12:25:31+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-25T12:24:11+08:00">
                 2017-02-25
               </time>
             
@@ -283,6 +283,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/huno/categories/fe/" itemprop="url" rel="index">
+                    <span itemprop="name">fe</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -311,9 +333,7 @@
       
         
           
-            <hr>
-<p>title: 浏览器你为什么要干掉我的请求<br>date: 2017-02-25 12:24:11</p>
-<h2 id="categories-fe"><a href="#categories-fe" class="headerlink" title="categories: fe"></a>categories: fe</h2><p>前两天发现了一个对于我而言比较猎奇的事情：在点击跳转连接之后，新打开的页面出现异常（本来是要直接跳转到网页版qq的，结果白屏），顺手F12了一下，看到一个红色的请求，哦原来是有请求失败了呀，再仔细一看…这个请求返回的status是<strong>canceled</strong>，奇怪哦，被cancel掉了。<br><img src="https://raw.githubusercontent.com/KKKyrie/markdown-pics/master/brow_cancel_req/cancel.png" alt="被cancel掉的无辜请求"><br>浏览器你就不能矜矜业业的好好发送请求吗？<br>待我平静下来，去sf上面找答案，在经过几次超链的跳转之后，我来到了一个满是English的页面，虽然本人英语还算不差，但是当时心浮气躁，没看两眼就关掉了。（那个时候的我只想当一个无脑的伸手党…巴不得有人可以给我活灵活现的讲解一下…）<br>最后去求助了一位好盆友，才知道了这个问题的答案，不卖关子，先来解答。</p>
+            <p>前两天发现了一个对于我而言比较猎奇的事情：在点击跳转连接之后，新打开的页面出现异常（本来是要直接跳转到网页版qq的，结果白屏），顺手F12了一下，看到一个红色的请求，哦原来是有请求失败了呀，再仔细一看…这个请求返回的status是<strong>canceled</strong>，奇怪哦，被cancel掉了。<br><img src="https://raw.githubusercontent.com/KKKyrie/markdown-pics/master/brow_cancel_req/cancel.png" alt="被cancel掉的无辜请求"><br>浏览器你就不能矜矜业业的好好发送请求吗？<br>待我平静下来，去sf上面找答案，在经过几次超链的跳转之后，我来到了一个满是English的页面，虽然本人英语还算不差，但是当时心浮气躁，没看两眼就关掉了。（那个时候的我只想当一个无脑的伸手党…巴不得有人可以给我活灵活现的讲解一下…）<br>最后去求助了一位好盆友，才知道了这个问题的答案，不卖关子，先来解答。</p>
 <p>stack<strong>overflow</strong>上面的最高票回答：<br><img src="https://raw.githubusercontent.com/KKKyrie/markdown-pics/master/brow_cancel_req/answerfromsof.png" alt="stackoverflow"><br>划个重点：  </p>
 <blockquote>
 <ol>
