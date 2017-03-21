@@ -112,7 +112,7 @@
       applicationID: '',
       apiKey: '',
       indexName: '',
-      hits: {"per_page":10},
+      hits: {"per_page":5},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
@@ -204,9 +204,47 @@
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
   
 </nav>
 
@@ -221,6 +259,153 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://kyrieliu.cn/huno/huno/2017/03/20/gitignore/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="劉凯里">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="http://kyrieliu.cn/images/kyrieliu.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Kyrie On">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Kyrie On" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/huno/2017/03/20/gitignore/" itemprop="url">
+                  你的.gitignore失效了吗？
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-20T02:15:01+08:00">
+                2017-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/huno/categories/fe/" itemprop="url" rel="index">
+                    <span itemprop="name">fe</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          惯例逼叨逼这个周末跟着部门去团建了，最喜欢的项目其实是在宾馆里打王者农药，因为这件事情说出来都有一丝浓浓的消极怠工的味道。不知怎么的，以往最乐衷于做的事情——一边听歌一边看车窗外的风景，这次也被我用上车就睡的姿势取代了，也正是我为什么这个点写了一个推送。由于此次分享的知识点之小巧，我都不好意思转发到朋友圈，如果你看到了这篇推送，我只能真诚的隔着手机屏幕对你说一句，“在项目繁多的公共号列表里，你还能
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/huno/2017/03/20/gitignore/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -333,37 +518,16 @@
       
         
           
-            <h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><p>git status 查看当前状态<br>git diff 查看修改<br>git log 日志<br>git log –pretty=oneline 更清爽的日志<br>git reflog 历届版本<br>git reset –hard 1232123 回退到版本号所示的版本<br>git reset –hard HEAD~1 回退到上一个版本  </p>
-<h3 id="撤销修改"><a href="#撤销修改" class="headerlink" title="撤销修改"></a>撤销修改</h3><p>场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout – file。</p>
-<p>场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD file，就回到了场景1，第二步按场景1操作。</p>
-<p>场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考版本回退一节，不过前提是没有推送到远程库。  </p>
-<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3><p>命令git rm用于删除一个文件。如果一个文件已经被提交到版本库，那么你永远不用担心误删，但是要小心，你只能恢复文件到最新版本，你会丢失最近一次提交后你修改的内容。  </p>
-<h3 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h3><p>git branch 查看当前分支<br>git branch name 创建name分支<br>git checkout name 切换到name分支<br>git checkout -b dev 创建dev分支并切换到dev分支<br>git merge dev 把dev分支的工作成果合并到当前分支上<br>git branch -d name 删除name分支  </p>
-<h3 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作"></a>多人协作</h3><p>git remote -v 查看远程库信息<br>git checkout -b branch-name origin/branch-name 在本地创建和远程分支对应的分支<br>git push origin branch-name 推送自己的修改<br>git pull 将远程分支的更新合并到本地分支<br>git branch –set-upstream branch-name origin/branch-name 关联本地分支和远程分支  </p>
-<h3 id="协作"><a href="#协作" class="headerlink" title="协作"></a>协作</h3><blockquote>
-<p>不把git的分支玩出翔，你都不好意思跟别人说你用过git。  </p>
-</blockquote>
-<p>git的分支模型：  </p>
-<ul>
-<li>永久性分支  <ul>
-<li>master branch  </li>
-<li>develop branch  </li>
-</ul>
-</li>
-<li>临时性分支  <ul>
-<li>feature branch  </li>
-<li>release branch  </li>
-<li>hotfix branch  </li>
-</ul>
-</li>
-</ul>
-<h4 id="永久性分支"><a href="#永久性分支" class="headerlink" title="永久性分支"></a>永久性分支</h4><p>存在于整个项目的开始、开发、迭代、终止的过程。<br><strong>master</strong>：从项目一开始便存在，用于存放经过测试、已经完全稳定的代码。在任何时候，master存放的应该是可供用户使用的产品代码。master分支代表着产品每一次迭代的新版本，因此，在所有的分支中，master是最不活跃的。<br><strong>develop</strong>：用于开发的分支，每个开发者自己的仓库上也有master和develop，开发者把功能做好后，代码是存放在自己的develop分支中，当测试完毕后，向管理员发起一个pull request，请求把自己仓库的develop合并到源仓库的develop分支。  </p>
-<blockquote>
-<p>master所有代码更新应该源于合并develop的代码。  </p>
-</blockquote>
-<h4 id="临时性分支"><a href="#临时性分支" class="headerlink" title="临时性分支"></a>临时性分支</h4><p><strong>feature</strong>：从develop拉出来的一个分支，是开发人员的主要战场，一般要实现一些产品的新特性或功能时，都需要在这里进行开发，比如说我要开发一个朋友圈的功能，我就会拉一个名叫“feature-moments”的分支，并在其中进行开发。<br><strong>release</strong>：预发布分支，在产品发布之前，通常需要进行最后的调整和测试，这时就可以checkout -b一个预发布分支，记性最后的测试。当产品发布时，release分支就可以删除了。<br><strong>hotfix</strong>：一旦产品出现了bug，就需要拉一个hotfix分支进行修复，比如评论功能出现问题，反手就拉一个hotfix-comment的分支进行fix，等到消灭bug以后，再把该分支合并到master和develop，即可删除。</p>
-
-          
+          基本操作git status 查看当前状态git diff 查看修改git log 日志git log –pretty=oneline 更清爽的日志git reflog 历届版本git reset –hard 1232123 回退到版本号所示的版本git reset –hard HEAD~1 回退到上一个版本  
+撤销修改场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令gi
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/huno/2017/03/01/git-u-should-know/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -502,25 +666,15 @@
       
         
           
-            <p>前两天发现了一个对于我而言比较猎奇的事情：在点击跳转连接之后，新打开的页面出现异常（本来是要直接跳转到网页版qq的，结果白屏），顺手F12了一下，看到一个红色的请求，哦原来是有请求失败了呀，再仔细一看…这个请求返回的status是<strong>canceled</strong>，奇怪哦，被cancel掉了。<br><img src="https://raw.githubusercontent.com/KKKyrie/markdown-pics/master/brow_cancel_req/cancel.png" alt="被cancel掉的无辜请求"><br>浏览器你就不能矜矜业业的好好发送请求吗？<br>待我平静下来，去sf上面找答案，在经过几次超链的跳转之后，我来到了一个满是English的页面，虽然本人英语还算不差，但是当时心浮气躁，没看两眼就关掉了。（那个时候的我只想当一个无脑的伸手党…巴不得有人可以给我活灵活现的讲解一下…）<br>最后去求助了一位好盆友，才知道了这个问题的答案，不卖关子，先来解答。</p>
-<p>stack<strong>overflow</strong>上面的最高票回答：<br><img src="https://raw.githubusercontent.com/KKKyrie/markdown-pics/master/brow_cancel_req/answerfromsof.png" alt="stackoverflow"><br>划个重点：  </p>
-<blockquote>
-<ol>
-<li>The DOM element that caused the request to be made got deleted (i.e. an IMG is being loaded, but before the load happened, you deleted the IMG node)  </li>
-<li>You did something that made loading the data unnecessary. (i.e. you started loading a iframe, then changed the src or overwrite the contents)  </li>
-<li>There are lots of requests going to the same server, and a network problem on earlier requests showed that subsequent requests weren’t going to work (DNS lookup error, earlier (same) request resulted e.g. HTTP 400 error code, etc)  </li>
-</ol>
-</blockquote>
-<p>根据上面所说的，浏览器之所以会干掉请求，有以下<strong>三种原因</strong>：  </p>
-<ul>
-<li>发起这次请求的DOM元素被删除了。（eg：一个img元素节点，在图片加载完成之前就不幸被删掉了）  </li>
-<li>开发者做了一些使加载数据变得不必要的事情。（eg：你加载了一个iframe，接着直接改变了src或者用document.write重写了内容）  </li>
-<li>有大量的请求指向同一个服务器，之前请求的错误表明相同后续的请求是行不通的（DNS查询错误、或是排在前面诶对相同请求是有错误的，比如400状态码）  </li>
-</ul>
-<p>经过这个事情，不仅get到了一个新姿势，而且更重要的是获得到的反思。<br>感谢我的好友<strong>磊磊</strong>用实际行动告诉我：<strong>忌浮躁</strong>。  </p>
-<p>但是并不是每个故事都有一个happy ending，我在一开始说的页面白屏问题还没有得到解决，更奇怪的是…周围同事们都纷纷表示这个页面没问题…我也没配host啊…不过已经可以基本锁定是我这边出的问题了…如果你有类似的情况…我可以求你赐个教吗…</p>
-
-          
+          前两天发现了一个对于我而言比较猎奇的事情：在点击跳转连接之后，新打开的页面出现异常（本来是要直接跳转到网页版qq的，结果白屏），顺手F12了一下，看到一个红色的请求，哦原来是有请求失败了呀，再仔细一看…这个请求返回的status是canceled，奇怪哦，被cancel掉了。浏览器你就不能矜矜业业的好好发送请求吗？待我平静下来，去sf上面找答案，在经过几次超链的跳转之后，我来到了一个满是Engli
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/huno/2017/02/25/browser-why/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -659,30 +813,18 @@
       
         
           
-            <p>来深圳三天了，和之前去每个城市一样，初来乍到，都不免要折腾一阵子。<br>当今天我终于可以放松心情，一边走着夜路，一边感受一下这个城市的时候，第一个跳进我脑海的词，意外的不是“互联网”，而是<strong>“共享单车”。</strong>  </p>
-<p>新兴产业总是最先到达类似深圳这样的全国一线城市，共享单车也不例外。<br>望周知，现在的共享单车app已经有25+种了。 </p>
-<p><img src="https://raw.githubusercontent.com/KKKyrie/markdown-pics/master/ofo/bike_app.png" alt="众多app"></p>
-<p>这两天发现，在深圳，共享单车的领域里，形成了四足鼎立的局面——ofo、bluegogo、mobike、小鸣单车。  </p>
-<p><img src="https://raw.githubusercontent.com/KKKyrie/markdown-pics/master/ofo/cover.jpg" alt="小黄车"></p>
-<p>就个人而言，我最喜欢的是ofo（小黄车）——简洁的车型设计，醒目的颜色，不落俗套的名字和logo，最重要的一个原因——傻白甜式的车锁设计：每辆小黄车有一个车牌号，用户取车时只需要在app内输入车牌号，就能得到密码锁的密码。换言之，每辆车的密码是固定的，所以你会在她的app中看到这样一行字：用车结束后请上锁并随手拨乱密码锁。</p>
-<p>在得知了这样的一种“加密机制”时，心中大概已经脑补了100种将小黄车占为己有的方法……这锁真的是…nothing but 傻白甜啊…</p>
-<p>虽然不知道ofo的产品经理们最初是怎么想的，但是我非常愿意相信他们一开始的愿景是这样的：让我们在健康出行的同时保护环境，在倡导低碳的同时传播信任。</p>
-<p>理想很丰满，现实……（分享两张我今天拍的照片）  </p>
-<p><img src="https://raw.githubusercontent.com/KKKyrie/markdown-pics/master/ofo/hide_lock.jpg" alt="随手拍">  </p>
-<p>这是一张被藏在深圳大学某一个校门口草丛中的小黄车，还上了第二把锁。<br>其实拍摄这张照片前还有一个插曲<br>一个大学生模样的人在一辆小黄车前折腾了许久<br>我以为他不会开锁，所以上前对他说<br>“把密码对准旁边的箭头，再按一下这个按钮就好了”<br>他看了一眼我，尴尬的笑了笑，跑开了<br>原来…他在破解密码啊…  </p>
-<p><img src="https://raw.githubusercontent.com/KKKyrie/markdown-pics/master/ofo/wtf.jpg" alt="随手拍">  </p>
-<p>今天早上我一边走， 一边搜寻小黄车的时候，发现路边居然还停了几辆没有被骑走，开心的走上前去，刚把手机掏出来，发现这几辆小黄车车牌号的后三位都被人故意磨掉了……</p>
-<p>我猜想，在全国各地，还有更多的共享单车在忍受着黑恶势力的无情摧残：(</p>
-<p>下班回来的一路上都在自作多情的为小黄车出谋划策：比如开发可以拿到每辆车出行的运动轨迹，如果相同一辆车的出行轨迹比较单一，总是那几个地方，在观察了一段时间后就可以封号了…（现在一想这办法不靠谱…因为在偷车得手之后…偷车的碧池就不会每次骑小黄车的时候还打开ofo了…难道要给每辆车装一个实时传送GPS定位数据的装置吗…这成本就太大了…）</p>
-<p>总之，我还是打心眼里希望ofo能保留这种善意的车锁，因为我很喜欢被信任的感觉；也希望越来越多的人能get到ofo这么做的用心良苦，不断的用自己的行动来回应ofo给予的信任。</p>
-<p><strong>但是，现实总是在打理想的脸——相比其他的共享单车，ofo小黄车的受伤害指数最高，究其原因——独有的“傻白甜”车锁。</strong></p>
-<p><strong>共享单车，aka，人性的照妖镜。</strong></p>
-<p>人们的所作所为终于还是让ofo的产品经理们“学聪明”了，就像一个初入情场的耿直boy，在受到了绿茶婊们的玩弄和摧残后，终于还是在心中建起了围墙。</p>
-<p>ofo的官博在今年的1月17号宣布：小黄车的车锁要升级啦！</p>
-<p>其实看到这个消息的时候，我在为小黄车松了一口气的同时，也为这个曾经是那样信任用户的企业感到惋惜。</p>
-<p><strong>诅咒那些自私无耻的灵魂，阿门！</strong></p>
+          来深圳三天了，和之前去每个城市一样，初来乍到，都不免要折腾一阵子。当今天我终于可以放松心情，一边走着夜路，一边感受一下这个城市的时候，第一个跳进我脑海的词，意外的不是“互联网”，而是“共享单车”。  
+新兴产业总是最先到达类似深圳这样的全国一线城市，共享单车也不例外。望周知，现在的共享单车app已经有25+种了。 
 
-          
+这两天发现，在深圳，共享单车的领域里，形成了四足鼎立的局面——ofo、blueg
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/huno/2017/02/23/ofo/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -821,1513 +963,23 @@
       
         
           
-            <blockquote>
-<p>用脚本进行DOM操作的代价是很昂贵的，它是富web应用中最常见的性能瓶颈。主要有以下三种问题：  </p>
-<ol>
-<li>访问和修改DOM元素</li>
-<li>修改DOM元素的样式导致repaint和reflow</li>
-<li>通过DOM事件处理与用户进行交互  </li>
-</ol>
-</blockquote>
-<h2 id="浏览器中的DOM"><a href="#浏览器中的DOM" class="headerlink" title="浏览器中的DOM"></a>浏览器中的DOM</h2><p><strong>DOM是（Document Object Model）一个与语言无关的、用来操作XML和HTML文档的应用程序接口（Application Program Interface）。</strong> 尽管DOM与语言无关，但是在浏览器中的接口却是用JavaScript来实现的。  </p>
-<h3 id="一个前端小知识"><a href="#一个前端小知识" class="headerlink" title="一个前端小知识"></a>一个前端小知识</h3><p>浏览器通常会把js和DOM分开来分别独立实现。<br>举个<del>栗子</del>冷知识，在IE中，js的实现名为JScript，位于jscript.dll文件中；DOM的实现则存在另一个库中，名为mshtml.dll（Trident）。<br>Chrome中的DOM实现为webkit中的webCore，但js引擎是Google自己研发的V8。<br>Firefox中的js引擎是SpiderMonkey，渲染引擎（DOM）则是Gecko。  </p>
-<h3 id="DOM，天生就慢"><a href="#DOM，天生就慢" class="headerlink" title="DOM，天生就慢"></a>DOM，天生就慢</h3><p>前面的小知识中说过，浏览器把实现页面渲染的部分和解析js的部分<strong>分开来实现</strong>，既然是分开的，一旦两者需要产生连接，就要付出代价。<br>两个例子：  </p>
-<ol>
-<li>小明和小红是两个不同学校的学生，两个人家里经济条件都不太好，买不起手机（好尴尬的设定Orz…），所以只能通过写信来互相交流，这样的过程肯定比他俩面对面交谈时所需要花费的代价大（额外的事件、写信的成本等）。  </li>
-<li><strong>官方例子</strong>：把DOM和js（ECMAScript）各自想象为一座岛屿，它们之间用收费桥进行连接。ECMAScript每次访问DOM，都要途径这座桥，并交纳“过桥费”。访问DOM的次数越多，费用也就越高。  </li>
-</ol>
-<p>因此，推荐的做法是：<strong>尽可能的减少过桥的次数，努力待在ECMAScript岛上</strong>。  </p>
-<h2 id="DOM的访问与修改"><a href="#DOM的访问与修改" class="headerlink" title="DOM的访问与修改"></a>DOM的访问与修改</h2><p>前面说到访问DOM需要交纳“过桥费”，而修改DOM元素则代价更为昂贵，因为它会导致浏览器重新计算页面的几何变化。<br>来看一段代码：  </p>
-<pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">innerHTMLLoop</span>(<span class="params"></span>)</span>{
-    <span class="keyword">for</span> (<span class="keyword">var</span> count = <span class="number">0</span>; count &lt; <span class="number">15000</span>; count++){
-        <span class="built_in">document</span>.getElementById(<span class="string">'text'</span>).innerHTML += <span class="string">'dom'</span>;
-    }
-}
-</code></pre>
-<p>这段代码，每次循环会访问两次特定的元素：第一次读取这个元素的innerHTML属性，第二次重写它。<br>看清楚了这一点，不难得到一个效率更高的版本：  </p>
-<pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">innerHTMLLoop2</span>(<span class="params"></span>)</span>{
-    <span class="keyword">var</span> content = <span class="string">''</span>;
-    <span class="keyword">for</span> (<span class="keyword">var</span> count = <span class="number">0</span>; count &lt; <span class="number">15000</span>; count++){
-        content += <span class="string">'dom'</span>;
-    }
-    <span class="built_in">document</span>.getElementById(<span class="string">'text'</span>).innerHTML += content;
-}
-</code></pre>
-<p>用一个局部变量包层每次更新后的内容，等待循环结束后，一次性的写入页面（尽可能的把更多的工作交给js的部分来做）。<br>根据统计，在所有的浏览器中，修改后的版本都运行的更快（优化幅度最明显的是IE8，使用后者比使用前者快273倍）。  </p>
-<h3 id="HTML元素集合"><a href="#HTML元素集合" class="headerlink" title="HTML元素集合"></a>HTML元素集合</h3><p>HTML元素集合是包含了DOM节点引用的<strong>类数组</strong>对象。<br>可以用以下方法或属性得到一个HTML元素集合：  </p>
-<ul>
-<li>document.getElementsByName()</li>
-<li>document.getElementsByTagName()</li>
-<li>document.getElementsByClassName()</li>
-<li>document.images <em>页面中所有img元素</em></li>
-<li>document.links <em>页面中所有a元素</em></li>
-<li>document.forms <em>页面中所有表单元素</em></li>
-<li>document.forms[0].elements <em>页面中第一个表单的所有字段</em>  </li>
-</ul>
-<p>HTML元素集合处于一种“实时的状态”，这意味着当底层文档对象更新时，它也会自动更新，也就是说，HTML元素集合与底层的文档对象之间保持的连接。正因如此，每当你想从HTML元素集合中获取一些信息时，都会产生一次查询操作，这正是低效之源。  </p>
-<h4 id="昂贵的集合"><a href="#昂贵的集合" class="headerlink" title="昂贵的集合"></a>昂贵的集合</h4><pre><code class="javascript"><span class="comment">//这是一个死循环</span>
-<span class="comment">//不管你信不信，反正我是信了</span>
-<span class="keyword">var</span> alldivs = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>);
-<span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; alldivs.length; i++){
-    <span class="built_in">document</span>.body.appendChild(<span class="built_in">document</span>.createElement(<span class="string">'div'</span>));
-}
-</code></pre>
-<p>乍一看，这段代码只是单纯的把页面中的div数量翻倍：遍历所有的div，每次创建一个新的div并创建到添加到body中。<br>但事实上，这是一个死循环：因为循环的退出条件alldivs.length在每一次循环结束后都会增加，因为这个HTML元素集合反映的是底层文档元素的实时状态。<br>接下来，我们通过这段代码，对一个HTML元素集合做一些处理：</p>
-<pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">toArray</span>(<span class="params">coll</span>)</span>{
-    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, a = [], len = coll.lengthl i &lt; len; i++){
-        a[i] = coll[i];
-    }
-    <span class="keyword">return</span> a;
-}
-
-<span class="comment">//讲一个HTML元素集合拷贝到一个数组中</span>
-<span class="keyword">var</span> coll = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>);
-<span class="keyword">var</span> arr = toArray(coll);
-</code></pre>
-<p>现在比较以下两个函数：  </p>
-<pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">loopCollection</span>(<span class="params"></span>)</span>{
-    <span class="keyword">for</span> (<span class="keyword">var</span> count = <span class="number">0</span>; count &lt; coll.length; count++){
-        <span class="comment">//processing...</span>
-    }
-}
-
-<span class="function"><span class="keyword">function</span> <span class="title">loopCopiedArray</span>(<span class="params"></span>)</span>{
-    <span class="keyword">for</span> (<span class="keyword">var</span> count = <span class="number">0</span>; count &lt; arr.length; count++){
-        <span class="comment">//processing...</span>
-    }
-}
-</code></pre>
-<p>在IE6中，后者比前者快114倍；IE7中119倍；IE8中79倍…<br>所以，在相同的内容和数量下，遍历一个数组的速度明显快于遍历一个HTML元素集合。<br>由于在每一次迭代循环中，读取元素集合的length属性会引发集合进行更新，这在所有的浏览器中都有明显的性能问题，所以你也可以这么干：  </p>
-<pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">loopCacheLengthCollection</span>(<span class="params"></span>)</span>{
-    <span class="keyword">var</span> coll = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>),
-        len = coll.length;
-    <span class="keyword">for</span> (<span class="keyword">var</span> count = <span class="number">0</span>; count &lt; len; count++){
-        <span class="comment">//processing...</span>
-    }
-}
-</code></pre>
-<p>这个函数和上面的loopCopiedArray()一样快。  </p>
-<h4 id="访问集合元素时使用局部变量"><a href="#访问集合元素时使用局部变量" class="headerlink" title="访问集合元素时使用局部变量"></a>访问集合元素时使用局部变量</h4><p>一般来说，对于任何类型的DOM访问，当同一个DOM属性或者方法需要被多次访问时，最好使用一个局部变量缓存此成员。当遍历一个集合时，首要优化原则是把集合存储在局部变量中，并把length缓存在循环外部，然后使用局部变量访问这些需要多次访问的元素。<br>一个栗子，在循环之中访问每个元素的三个属性。  </p>
-<pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">collectionGlobal</span>(<span class="params"></span>)</span>{
-    <span class="keyword">var</span> coll = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>),
-        len = coll.length,
-        name = <span class="string">''</span>;
-    <span class="keyword">for</span> (<span class="keyword">var</span> count = <span class="number">0</span>; count &lt; len; count++){
-        name = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>)[count].nodeName;
-        name = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>)[count].nodeType;
-        name = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>)[count].tagName;
-        <span class="comment">//我的天不会有人真的这么写吧...</span>
-    }
-    <span class="keyword">return</span> name;
-}
-</code></pre>
-<p>上面这段代码，大家不要当真…正常人肯定是写不出来的…这里是为了对比一下，所以把这种最慢的情况写给大家看。<br>接下来，是一个稍微优化了的版本：  </p>
-<pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">collectionLocal</span>(<span class="params"></span>)</span>{
-    <span class="keyword">var</span> coll = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>),
-        len = coll.length,
-        name = <span class="string">''</span>;
-    <span class="keyword">for</span> (<span class="keyword">var</span> count = <span class="number">0</span>; count &lt; length; count++){
-        name = coll[count].nodeName;
-        name = coll[count].nodeType;
-        name = coll[count].tagName;
-    }
-    <span class="keyword">return</span> name;
-}
-</code></pre>
-<p>这次就看起来正常很多了，最后是这次优化之旅的最终版本：  </p>
-<pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">collectionNodesLocal</span>(<span class="params"></span>)</span>{
-    <span class="keyword">var</span> coll = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'div'</span>),
-        len = coll.length,
-        name = <span class="string">''</span>,
-        ele = <span class="literal">null</span>;
-    <span class="keyword">for</span> (<span class="keyword">var</span> count = <span class="number">0</span>; count &lt; len; count++){
-        ele = coll[count];
-        name = ele.nodeName;
-        name = ele.nodeType;
-        name = ele.tagName;
-    }
-    <span class="keyword">return</span> name;
-}
-</code></pre>
-<h3 id="遍历DOM"><a href="#遍历DOM" class="headerlink" title="遍历DOM"></a>遍历DOM</h3><h4 id="在DOM中爬行"><a href="#在DOM中爬行" class="headerlink" title="在DOM中爬行"></a>在DOM中爬行</h4><p>通常你需要从某一个DOM元素开始，操作周围的元素，或者递归查找所有的子节点。<br>考虑下面两个等价的栗子：  </p>
-<pre><code class="javascript"><span class="comment">//1</span>
-<span class="function"><span class="keyword">function</span> <span class="title">testNextSibling</span>(<span class="params"></span>)</span>{
-    <span class="keyword">var</span> el = <span class="built_in">document</span>.getElementById(<span class="string">'mydiv'</span>),
-        ch = el.firstChild,
-        name = <span class="string">''</span>;
-    <span class="keyword">do</span> {
-        name = ch.nodeName;
-    } <span class="keyword">while</span> (ch = ch.nextSibling);
-    <span class="keyword">return</span> name;
-}
-
-<span class="comment">//2</span>
-<span class="function"><span class="keyword">function</span> <span class="title">testChildNodes</span>(<span class="params"></span>)</span>{
-    <span class="keyword">var</span> el = <span class="built_in">document</span>.getElementById(<span class="string">'mydiv'</span>),
-        ch = el.childNodes,
-        len = ch.length,<span class="comment">//childNodes是一个元素集合，因此在循环中主席缓存length属性以避免迭代更新</span>
-        name = <span class="string">''</span>;
-    <span class="keyword">for</span> (<span class="keyword">var</span> count = <span class="number">0</span>; count &lt; len; count++){
-        name = ch[count].nodeName;
-    }
-    <span class="keyword">return</span> name;
-}
-</code></pre>
-<p>在不同浏览器中，两种方法的运行时间几乎相等。但在老版本的IE浏览器中，nextSibling的性能比childNodes更好一些。  </p>
-<h4 id="元素节点"><a href="#元素节点" class="headerlink" title="元素节点"></a>元素节点</h4><p>我们知道，DOM节点有以下五种分类：  </p>
-<ul>
-<li>整个文档是一个<strong>文档节点</strong>  </li>
-<li>每个HTML元素是<strong>元素节点</strong>  </li>
-<li>HTML元素内的文本是<strong>文本节点</strong>  </li>
-<li>每个HTML属性是<strong>属性节点</strong>  </li>
-<li>注释是<strong>注释节点</strong>  </li>
-</ul>
-<p>诸如childNodes、firstChild、nextSibling这些DOM属性是不区分元素节点和其他类型的节点的，但往往我们只需要访问元素节点，此时需要做一些过滤的工作。事实上，这些类型检查的过程都是不必要的DOM操作。<br>许多现代浏览器提供的API只返回元素节点，如果可用的话推荐直接只用这些API，因为它们的执行效率比自己在js中过滤的效率要高。  </p>
-<ol>
-<li>现代浏览器提供的API（被替换的API）  </li>
-<li>children(childNodes)  </li>
-<li>childElementCount (childNodes.length)  </li>
-<li>firstElementChild (firstChild)  </li>
-<li>lastElementChild (lastChild)  </li>
-<li>nextElementSibling (nextSibling)  </li>
-<li>previousElementSibling (previousSibling)  </li>
-</ol>
-<p>使用这些新的API，可以直接获取到元素节点，也正是因此，其速度也更快。  </p>
-<h4 id="选择器API"><a href="#选择器API" class="headerlink" title="选择器API"></a>选择器API</h4><p>有时候为了得到需要的元素列表，开发人员不得不组合调用getElementById、getElementsByTagName，并遍历返回的节点，但这种繁密的过程效率低下。<br>最新的浏览器提供了一个传递参数为CSS选择器的名为querySelectorAll()的原生DOM方法。这种方式自然比使用js和DOM来遍历查找元素要快的多。<br>比如，  </p>
-<pre><code class="javascript"><span class="keyword">var</span> elements = <span class="built_in">document</span>.querySelectorAll(<span class="string">'#menu a'</span>);
-</code></pre>
-<p>这一段代码，返回的是一个NodeList————包含着匹配节点的类数组对象。与之前不同的是，这个方法不会返回HTML元素集合，因此返回的节点不会对应实时的文档结构，也避免了之前由于HTML集合引起的性能（潜在逻辑）问题。<br>如果不使用querySelectorAll()，我们需要这样写：  </p>
-<pre><code class="javascript"><span class="keyword">var</span> elements = <span class="built_in">document</span>.getElementById(<span class="string">'menu'</span>).getElementsByTagName(<span class="string">'a'</span>);
-</code></pre>
-<p>不仅写起来更麻烦了，更要注意的是，此时的elements是一个HTML元素集合，所以还需要把它copy到数组中，才能得到一个与前者相似的静态列表。<br>还有一个querySelector()方法，用来获取第一个匹配的节点。  </p>
-<h2 id="重绘与重排（Repaints-amp-Reflows）"><a href="#重绘与重排（Repaints-amp-Reflows）" class="headerlink" title="重绘与重排（Repaints &amp; Reflows）"></a>重绘与重排（Repaints &amp; Reflows）</h2><p>浏览器用来显示页面的所有“组件”，有：HTML标签、js、css、图片——之后会解析并生成两个内部的数据结构：  </p>
-<ul>
-<li>DOM树（表示页面结构）</li>
-<li>渲染树（表示DOM节点应该如何表示）  </li>
-</ul>
-<p>DOM树中的每一个需要显示的节点在渲染树中至少存在一个对应的节点。<br>渲染树中的节点被称为“帧（frames）”或“盒（boxes）”，符合css盒模型的定义，理解页面元素为一个具有padding、margin、borders和position的盒子。<br>一旦渲染树构建完成，浏览器就开始显示页面元素，这个过程称为<strong>绘制（paint）</strong>。  </p>
-<p>当DOM的变化影响了元素的几何属性（宽、高）——比如改变改变了边框的宽度或者给一个段落增加一些文字导致其行数的增加——浏览器就需要重新计算元素的几何属性，同样，页面中其他元素的几何属性和位置也会因此受到影响。<br>浏览器会使渲染树中收到影响的部分消失，重新构建渲染树，这个过程称为“<strong>重排(reflow)</strong>”。重排完成之后，浏览器会重新将受到影响的部分绘制到浏览器中，这个过程称之为“<strong>重绘(repaint)</strong>”。  </p>
-<p>如果改变的不是元素的几何属性，如：改变元素的背景颜色，不会发生重排，只会发生一次重绘，因为元素的布局并没有改变。<br>不管是重绘还是重排，都是代价昂贵的操作，它们会导致web应用程序的UI反应迟钝，应当尽可能的减少这类过程的发生。  </p>
-<h3 id="重排何时发生？"><a href="#重排何时发生？" class="headerlink" title="重排何时发生？"></a>重排何时发生？</h3><ul>
-<li>添加或删除可见的DOM元素  </li>
-<li>元素位置的改变  </li>
-<li>元素尺寸的改变（padding、margin、border、height、width）  </li>
-<li>内容改变（文本改变或图片尺寸改变）  </li>
-<li>页面渲染器初始化  </li>
-<li>浏览器窗口尺寸改变  </li>
-<li>滚动条的出现（会触发整个页面的重排）  </li>
-</ul>
-<h3 id="最小化重绘和重排"><a href="#最小化重绘和重排" class="headerlink" title="最小化重绘和重排"></a>最小化重绘和重排</h3><h4 id="改变样式"><a href="#改变样式" class="headerlink" title="改变样式"></a>改变样式</h4><p>一个栗子：  </p>
-<pre><code class="javascript"><span class="keyword">var</span> el = <span class="built_in">document</span>.getElementById(<span class="string">'mydiv'</span>);
-el.style.borderLeft = <span class="string">'1px'</span>;
-el.style.borderRight = <span class="string">'2px'</span>;
-el.style.padding = <span class="string">'5px'</span>;
-</code></pre>
-<p>示例中，元素的三个样式被改变，而且每一个都会影响元素的几何结构。在最糟糕的情况下，这段代码会触发三次重排（大部分现代浏览器为此做了优化，只会触发一次重排）。从另一个角度看，这段代码四次访问DOM，可以被优化。  </p>
-<pre><code class="javascript"><span class="keyword">var</span> el = <span class="built_in">document</span>.getElementById(<span class="string">'mydiv'</span>);
-<span class="comment">//思路：合并所有改变然后一次性处理</span>
-<span class="comment">//method_1:使用cssText属性</span>
-el.style.cssText = <span class="string">'border-left: 1px; border-right: 2px; padding: 5px'</span>;
-
-<span class="comment">//method_2:修改类名</span>
-el.className = <span class="string">'anotherClass'</span>;
-</code></pre>
-<h4 id="批量修改DOM"><a href="#批量修改DOM" class="headerlink" title="批量修改DOM"></a>批量修改DOM</h4><p>当你需要对DOM元素进行一系列操作的时候，不妨按照如下步骤：  </p>
-<ol>
-<li>使元素脱离文档流  </li>
-<li>对其应用多重改变  </li>
-<li>把元素带回文档中  </li>
-</ol>
-<p>上面的这一套组合拳中，第一步和第三部分别会触发一次重排。<strong>但是如果你忽略了这两个步骤，那么在第二步所产生的任何修改都会触发一次重排</strong>。  </p>
-<p>在此安利三种可以使DOM元素脱离文档流的方法：  </p>
-<ul>
-<li>隐藏元素  </li>
-<li>使用文档片段（document fragment）在当前DOM之外构建一个子树，再把它拷贝回文档  </li>
-<li>将原始元素拷贝到一个脱离文档的节点中，修改副本，完成后再替换原始元素  </li>
-</ul>
-<h4 id="让动画元素脱离文档流"><a href="#让动画元素脱离文档流" class="headerlink" title="让动画元素脱离文档流"></a>让动画元素脱离文档流</h4><p>一般情况下，重排只影响渲染树中的一小部分，但也可能影响很大的一部分，甚至是整个渲染树。<br>浏览器所需的重排次数越少，应用程序的响应速度也就越快。<br>想象这样一种情况，页面的底部有一个动画，会推移页面整个余下的部分，这将是一次代价昂贵的大规模重排！用户也势必会感觉到页面一卡一卡的。<br>因此，使用以下步骤可以避免页面中的大部分重排：  </p>
-<ol>
-<li>使用<strong>绝对定位</strong>让页面上的动画元素脱离文档流  </li>
-<li>动画展示阶段  </li>
-<li>动画结束时，将元素恢复定位。  </li>
-</ol>
-<h4 id="IE的-hover"><a href="#IE的-hover" class="headerlink" title="IE的:hover"></a>IE的:hover</h4><p>从IE7开始，IE允许在任何元素上使用:hover这个css选择器。<br>然而，如果你有大量元素使用了:hover，你会发现，贼喇慢！  </p>
-<h2 id="事件委托（Event-Delegation）"><a href="#事件委托（Event-Delegation）" class="headerlink" title="事件委托（Event Delegation）"></a>事件委托（Event Delegation）</h2><p>这一个优化手段也是在前端求职面试中的高频题目。<br>当页面中有大量的元素，并且这些元素都需要绑定事件处理器。<br>每绑定一个事件处理器都是有代价的，要么加重了页面负担，要么增加了运行期的执行时间。再者，事件绑定会占用处理时间，而且浏览器需要跟踪每个事件处理器，这也会占用更多的内存。还有一种情况就是，当这些工作结束时，这些事件处理器中的绝大多数都是不再需要的（并不是100%的按钮或链接都会被用户点击），因此有很多工作是没有必要的。<br>事件委托的<strong>原理</strong>很简单——<strong>事件逐层冒泡并能被父级元素捕获</strong>。<br>使用事件委托，只需要给外层元素绑定一个处理器，就可以处理在其子元素上触发的所有事件。<br>有以下几点需要注意：  </p>
-<ul>
-<li>访问事件对象，判断事件源  </li>
-<li>按需取消文档树中的冒泡  </li>
-<li>按需阻止默认动作  </li>
-</ul>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>访问和操作DOM需要穿越连接ECMAScript和DOM两个岛屿之间的桥梁，为了尽可能的减少“过桥费”，有以下几点需要注意：  </p>
-<ul>
-<li>最小化DOM访问次数  </li>
-<li>对于需要多次访问的DOM节点，使用局部变量存储其引用  </li>
-<li>如果要操作一个HTML元素集合，建议把它拷贝到一个数组中  </li>
-<li>使用速度更快的API：比如querySelectorAll  </li>
-<li>留意重排和重绘的次数  </li>
-<li>事件委托</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://kyrieliu.cn/huno/huno/2017/01/27/browser-caching/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="劉凯里">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="http://kyrieliu.cn/images/kyrieliu.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Kyrie On">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Kyrie On" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/huno/2017/01/27/browser-caching/" itemprop="url">
-                  除夕谈浏览器缓存
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-27T16:59:24+08:00">
-                2017-01-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/huno/categories/fe/" itemprop="url" rel="index">
-                    <span itemprop="name">fe</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="什么是浏览器缓存？"><a href="#什么是浏览器缓存？" class="headerlink" title="什么是浏览器缓存？"></a>什么是浏览器缓存？</h2><p><img src="http://img.caibaojian.com/uploads/2016/02/http-cache1.png" alt="browser caching"><br><strong>Browser Caching</strong> 是浏览器将网络资源存储在本地的一种行为。<br>优点有：  </p>
-<ol>
-<li>减少冗余数据的传输</li>
-<li>减轻服务器的压力</li>
-<li>缩短网页的加载速度</li>
-</ol>
-<p>可以看出，浏览器缓存与性能优化有着千丝万缕的联系。  </p>
-<h3 id="浏览器缓存的分类"><a href="#浏览器缓存的分类" class="headerlink" title="浏览器缓存的分类"></a>浏览器缓存的分类</h3><ol>
-<li>协商缓存</li>
-<li>强缓存  </li>
-</ol>
-<p>听名字可以看出来，这两类缓存，一个属于细心的暖男，另一个则是强硬的霸道总裁。<br>好，参照<a href="http://caibaojian.com/browser-cache.html" target="_blank" rel="external">这篇文章</a>，我们先来了解一下浏览器缓存的过程：  </p>
-<ol>
-<li>首先，浏览器会去检查该资源有关缓存的HTTP Header。一个expires，一个cache-control，看是否命中<strong>强缓存</strong>。如果命中则直接从缓存中得到该资源（这次请求不会和服务端进行通信）。</li>
-<li>如果走到了这一步，说明我们的霸道总裁没有被翻牌子，那么<strong>协商缓存</strong>这个暖男就该出动了。浏览器会发送一个请求到服务端，这个请求会携带<del>一些东西</del>上一次请求返回的<strong>有关缓存的header字段</strong>（Last-Modified/If-Modified-Since、Etag/IF-None-Match），服务端拿到这些信息后，对比结果看是否命中协商缓存。如果命中，服务端只返回新的响应header更新缓存中的对应header信息（不返回对应资源），浏览器get到以后直接从缓存中取得该资源；若没有命中，服务端返回最新的资源内容。  </li>
-</ol>
-<h2 id="强缓存"><a href="#强缓存" class="headerlink" title="强缓存"></a>强缓存</h2><p>先来看看这个霸道总裁好了。<br>强缓存主要利用Http Response Header中的两个字段来控制，分别是<strong>Expires</strong>和<strong>Cache-Control</strong>。  </p>
-<h3 id="Expires"><a href="#Expires" class="headerlink" title="Expires"></a>Expires</h3><p>Expires的值是一个绝对时间的字符串，GMT格式，比如：Expires:Thu, 26 Jan 2017 23:39:02 GMT。这个时间表示的是该资源的有效期限，当请求处于这个时间之前时，均视为命中缓存。<br>缺点：因为这个时间表示的是资源过期的时间，所以当客户端和服务端有较大的时间偏差时，咳咳，情况就不妙了。  </p>
-<h3 id="Cache-Control"><a href="#Cache-Control" class="headerlink" title="Cache-Control"></a>Cache-Control</h3><p>Cache-Control是HTTP1.1时出现的头信息，主要利用其max-age的值来进行判断，Cache-Control:max-age=1800，表明这个资源的有效期是1800秒，不难看出，和Expires不同，这是一个相对时间。  </p>
-<h2 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h2><p>所谓协商缓存，就是协商嘛，这种情况下客户端和服务端地位是平等的，不像之前说的强缓存，服务端一个header字段，浏览器就要唯命是从。<br>准确的讲，  </p>
-<blockquote>
-<p>协商缓存是由服务端来确定缓存资源是否可用，这个情况下，需要客户端与服务端通过某种标识来进行通信，从而让服务端判断请求的资源是否可以通过缓存来访问。  </p>
-</blockquote>
-<p>这个过程涉及到两组字段（成对出现的字段）：  </p>
-<ol>
-<li>Last-Modified and If-Modified-Since</li>
-<li>Etag and If-None-Match</li>
-</ol>
-<p>上述1和2中的前者都是在第一次请求的响应头中存在的字段，后者则均存在于后续请求的请求Header中。<br>成对出现的表现在于：<strong>如果响应头中没有前者，则后续的请求头不会有后者</strong>。  </p>
-<h3 id="Last-Modified-If-Modified-Since"><a href="#Last-Modified-If-Modified-Since" class="headerlink" title="Last Modified/If-Modified-Since"></a>Last Modified/If-Modified-Since</h3><p>当服务端接收到来自浏览器的第一个请求时，服务端在响应的头中会带上Last-Modified，是一个GMT的时间字符串，代表着该资源的最后修改时间，例如Last-Modified: Wed, 26 Jan 2017 00:35:11 GMT。<br>当浏览器再次请求相同的资源时，请求的头中会包含一个If-Modified-Since，这个值就是第一次请求该资源时返回的Last-Modified。服务端会拿这个字段的值和资源上次修改的时间进行对比，如果相同，则说明资源没有改变，即命中缓存，此时返回304，不会返回相应的资源和Last-Modified。  </p>
-<h3 id="Etag-If-None-Match"><a href="#Etag-If-None-Match" class="headerlink" title="Etag/If-None-Match"></a>Etag/If-None-Match</h3><p>和上一对不同的是，这一对字段的值不是时间，而是一个校验码。Etag保证每个网络资源都是唯一的，资源变化都会导致Etag的变化。当服务端再次收到请求时，根据客户端上送的If-None-Match来进行判断，看是否命中协商缓存（过程与Last-Modified/If-Modified-Since相似）。<br><strong>当两对字段一起使用时，Etag的优先级大于Last-Modified。</strong>  </p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>今天是大年三十，那就祝你鸡年大吉吧:)</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://kyrieliu.cn/huno/huno/2017/01/25/my-2016/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="劉凯里">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="http://kyrieliu.cn/images/kyrieliu.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Kyrie On">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Kyrie On" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/huno/2017/01/25/my-2016/" itemprop="url">
-                  我的这一年
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-25T14:52:11+08:00">
-                2017-01-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/huno/categories/jotting/" itemprop="url" rel="index">
-                    <span itemprop="name">jotting</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>上一次写年终总结似乎已经是很久以前的事情了，大概可以追溯到中学时期班主任的一次寒假作业。<br>虽然把手机的壁纸设置成了提醒自己早睡早起的文字，可昨天还是很晚才睡，上一次早睡早起是什么时候呢，我也忘记了。<br>本来打算在家咸鱼一天的，看看说桌旁边自己从学校带回来的几本技术书，一半都没看完。惊觉还有一个月就要去深圳了，嗯，再次实习，感概学生时代的结束还真是让人有点猝不及防。<br>两个月前，简书就发起了“2016年总结”的活动，只是看了看，没有理睬。<br>一个月前，segmentfault也发起了类似的活动，心里痒痒。<br>就在刚才，在掘金看到了了一篇文章，<a href="https://gold.xitu.io/entry/588785e0570c350062d5fd18/detail" target="_blank" rel="external">“其实，中国的开发者们从来没有开心过”</a>。虽然不是什么大神，自己也算大半个开发者了，看过这篇还是挺有共鸣的。<br>想了想我的这一年，2016，和我人生中其它的20XX相比，还是挺不平凡的。  </p>
-<h2 id="关于学业"><a href="#关于学业" class="headerlink" title="关于学业"></a>关于学业</h2><p>2016年初，大三。<br>一年之后去哪里，考研还是工作？<br>有一位从小学一直学霸到研究生的表姐，在我大一的时候就认真的告诉过我，“你如果要读研究生的话，现在就该准备了”。无奈自己当时只是把这句话当了一句耳旁风式的学霸名言。<br>我的大一大二，还不错的两年。加入了学院的篮球队，认识了一帮好兄弟；虽然上课也有经常睡觉偷懒玩手机，但是最后的成绩也不是很难堪；谈过一次很认真的恋爱，虽然最后还是分开了，但是也教会了我很多。<br>总之，旁人看起来，我似乎过的轻松且风光，其实自己内心一直在挣扎。<br>大三了，似乎所有的事情的严峻了起来，我也不得不考虑接下来自己要干什么。研究生？我可不想在二十几岁的时候闷在实验室里搞研究，或者是给导师当廉价的劳动力，况且，我自知以自己的性子和脾气，读研可能是最不明智的选择。看看身边的人，选择读研的有三类人：本科学习很认真，或者是对于学习这件事情很专注的人；本科期间什么都没学到，读研只是为了缓解自己的就业压力。仔细一想，我还真是两边都不沾。而我深知，自己就是想搞事情。<br>最后，很坚决的选择了就业。<br>其实在决定的一瞬间，还是挺为自己骄傲的：<strong>能想明白自己要干什么。</strong><br>以至于后来，听说有人本科期间对于学业是个混吃等死的态度，通过当班委的途径做一些巴结老师的事情最终得到了一个未公开竞争的保研资格时，心里对那个人也是一千万个鄙视。  </p>
-<h2 id="关于篮球"><a href="#关于篮球" class="headerlink" title="关于篮球"></a>关于篮球</h2><h3 id="看球"><a href="#看球" class="headerlink" title="看球"></a>看球</h3><p>自从艾弗森退役以后，曾经很长一段时间不看NBA了。2011年开始喜欢凯里欧文，爱屋及乌的成为一名骑士粉。可无奈自从勒布朗走之后，骑士就成了一只鱼腩球队，虽然有全明星级别的后卫，但因为整体实力的原因多年无缘季后赛。<br>勒布朗回归以后，2015年打入从决赛，对手是当时空前强大的金州勇士。欧文在G1受伤，接下来的比赛都打不了，最后骑士以2：4败给了勇士。也是因为这个系列赛，对于勒布朗油然而生一股敬意。<br>2016年，总决赛同样面对勇士。前四场，1：3落后，美国权威机构给出骑士翻盘的概率只有3%。<br>最后，欧文在G7，右侧45度，投进一颗关键的三分球。骑士赢了，打破不夺冠魔咒，打破3%的预测。<br>真的，足够了。  </p>
-<h3 id="打球"><a href="#打球" class="headerlink" title="打球"></a>打球</h3><p>因为在外地实习，没办法打学校的健康杯，但是大家最后还是冠军，心里也是挺开心的。<br>遗憾的是，没有和上一届即将毕业的学长打那场告别赛。  </p>
-<p>我爸单位的篮球比赛，以家属的身份参加了四年，四年成绩都靠后。<br>今年阵容有补强，但是还是打得很艰难，最后决赛三分球4中4，高兴自己没有浪费一次投篮机会。抱着新加盟兄弟的大腿，多了冠。  </p>
-<h2 id="关于感情"><a href="#关于感情" class="headerlink" title="关于感情"></a>关于感情</h2><p>2016年谈过一次恋爱，开始的很不理智，所以导致最后一拍两散。<br>毕竟也不像大一大二的时候了，谈恋爱这种事情要更加谨慎的对待了，两个人起码要互相了解到一定的程度以后再决定要不要开始。<br>讲真，三观不一样的人，在一起就只剩互相折磨了。  </p>
-<h2 id="关于工作"><a href="#关于工作" class="headerlink" title="关于工作"></a>关于工作</h2><h3 id="实习"><a href="#实习" class="headerlink" title="实习"></a>实习</h3><p>2016年的春天，运气很好的获得了微信的实习offer，虽然最后没有留下，但是在那里工作的三个月，让我见识了很多，也改变了我很多。<br><img src="https://raw.githubusercontent.com/KKKyrie/markdown-pics/master/bubble.jpg" alt="微信气泡狗"><br>虽然个人不是很喜欢组里的氛围，但是组里的每个人都很nice，对我都有不同程度上的帮助。<br>不得不说的是因为中转住宿认识了一个中科大的研究生学长，<a href="http://kiss2.me" target="_blank" rel="external">阳哥</a>，一个很优秀的前端er，也很乐意和我分享一些他的宝贵经验，无论是工作还是生活。<br>yinshen是我的导师，初次见面以为是一个90后，问了以后才得知已经是两个孩子的爸爸了。很shy但是很nice的一个人，以至于到最后我离职当天，放下自己的手头工作抓紧时间把我拉进会议室给我讲一些前端优化的经验。<br>leo，安全组的一个文绉绉的饭友，很低调但是很强。<br>tunny和radeon，两个很接地气的前端大神，或许是因为和我年龄最接近吧，tunny的PPT做的简直不能更好，除了实习生以外，组里最能和朋友一样相处的就是他俩了。<br>cunjin哥，说话的语气低低的，给人一种高冷男神的感觉，不过因为也喜欢打球，和他也交流挺多，内心绝对是个超级暖男。<br>结识了我这一生中碰到的第一个产品经理siri，喜欢民谣，翻翻她的朋友圈就知道这是一个有情怀的产品人。<br>老乡eva姐，看面相以为是个毕业生，没想到已经工作好几年了，喜欢她的文风，也是很酷的一个人。<br>在球场认识的eating，长得有那么一点点神似薛之谦，平时和我有说有笑，真正工作起来简直无敌认真。<br>还有合作项目认识的产品tira，嘴上一直说着要约我去舞会肯定是因为自己喜欢的人被抢走了吧哈哈；最美女开发gaby，接触了才知道人很nice；有个性的bufo，文艺的cinthia……<br>懂得了一个道理，<strong>牛逼的人都很专注</strong>。<br>看到了他们，才清楚的认识到自己还有很长的一段路需要努力去走，不再沉浸在自我臆想出“还不错”的假象里。  </p>
-<h3 id="秋招"><a href="#秋招" class="headerlink" title="秋招"></a>秋招</h3><p>一场兵荒马乱的战役。<br>之前这一份绝佳的实习经历，于我来说，或许坏处要大于好处。<br>在跪了几次面试之后，也动摇过走技术的道路，参加了一次百度的产品岗位的招聘，最后不出意外的跪在了终面。<br>那一段时间过得还是比较压抑的，直到后来发现自己的面试越来越顺了，心态也调整了过来。<br>找工作这一路，遇到了很多志同道合的朋友，有说有笑，有骂有闹。<br>短短的两个多月，过的很难，但也成长很多。<br>最后选择了一家在深圳的D轮创业公司，很快就要去实习了，加油。  </p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>我的2016，跌宕起伏，大喜大悲似乎都有了，庆幸的是我从这些事情中都能得到些什么。<br>我的这一年，不开心。<br>我的这一年，很值得。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://kyrieliu.cn/huno/huno/2016/12/30/HPJS-vol-1/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="劉凯里">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="http://kyrieliu.cn/images/kyrieliu.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Kyrie On">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Kyrie On" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/huno/2016/12/30/HPJS-vol-1/" itemprop="url">
-                  加载和执行JS的正确姿势
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-30T23:38:55+08:00">
-                2016-12-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/huno/categories/fe/" itemprop="url" rel="index">
-                    <span itemprop="name">fe</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<p>kyrieliuの《高性能JavaScript》读书笔记。  </p>
-</blockquote>
-<p>script标签是一个很“霸道”的狠角色，它的每次出现都让页面等待脚本的解析和执行。也就是说，不管当前的javascript代码是内嵌还是包含在外链文件中，页面的下载和渲染都必须停下来等待脚本执行完成。<br>其实，script标签的“霸道”是必须的，<strong>因为页面的生存周期中，脚本的执行可能会修改页面的内容。</strong><br>总之，在解析和执行js的这个过程中，页面渲染和用户交互完全被阻塞了。  </p>
-<h2 id="脚本位置"><a href="#脚本位置" class="headerlink" title="脚本位置"></a>脚本位置</h2><p>说起脚本的位置，脑海里不禁想起来那两句真言：  </p>
-<ol>
-<li>css放在<code>&lt;head&gt;</code>里  </li>
-<li>js放在<code>&lt;/body&gt;</code>前  </li>
-</ol>
-<p>至于why呢，举个栗砸：  </p>
-<pre><code class="html"><span class="tag">&lt;<span class="name">html</span>&gt;</span>
-    <span class="tag">&lt;<span class="name">head</span>&gt;</span>
-        <span class="tag">&lt;<span class="name">title</span>&gt;</span>一个栗子<span class="tag">&lt;/<span class="name">title</span>&gt;</span>
-        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">'text/javascript'</span> <span class="attr">src</span>=<span class="string">'js_file_1.js'</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
-        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">'text/javascript'</span> <span class="attr">src</span>=<span class="string">'js_file_2.js'</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
-        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">'text/javascript'</span> <span class="attr">src</span>=<span class="string">'js_file_3.js'</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
-        <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">'stylesheet'</span> <span class="attr">type</span>=<span class="string">'text/css'</span> <span class="attr">href</span>=<span class="string">'css_file.css'</span> /&gt;</span>
-    <span class="tag">&lt;/<span class="name">head</span>&gt;</span>
-
-    <span class="tag">&lt;<span class="name">body</span>&gt;</span>
-        <span class="tag">&lt;<span class="name">p</span>&gt;</span>hello from kyrieliu.<span class="tag">&lt;/<span class="name">p</span>&gt;</span>
-    <span class="tag">&lt;/<span class="name">body</span>&gt;</span>
-<span class="tag">&lt;/<span class="name">html</span>&gt;</span>
-</code></pre>
-<p>这一段看似正常的代码实际上有着肥肠严重的性能问题：在head中加载了三个js文件。<br>前面我有说到，<strong>js文件会阻塞页面渲染</strong>，知道它们全部下载并执行完毕后，页面渲染才能继续（无情无耻无理取闹）。<br>纵观一份html文档，用户真正看得见的内容基本上都写在body标签里，也就是说，浏览器在解析到body标签之前，不会渲染页面的任何部分。现在又写了三个脚本到head标签里面，好嘞，这下子渲染的延迟更明显了，用户在打开这样的一个页面时，看到了what？白屏！用户不能浏览页面的内容，更无法与页面进行交互。  </p>
-<h3 id="场景还原"><a href="#场景还原" class="headerlink" title="场景还原"></a>场景还原</h3><p>第一个js文件开始下载，与此同时阻塞了页面其他文件的下载。等呀等，ok，第一个js文件终于下载完了，第二个js按捺不住自己喜悦的心情，正要开始下载，突然，第一个js文件说：“且慢，老子还没有完事呢”，第二个js文件吓了一跳，站在原地不动。第一个js文件开始执行，等到执行完毕，第二个js文件才得以开始下载。<br>总之，<strong>每个文件必须等到前一个文件下载并执行完成才会开始下载</strong>。<br>在这些文件”one by one”的下载执行过程中，用户看到的则是一片空白。  </p>
-<h3 id="不是那么好的好消息"><a href="#不是那么好的好消息" class="headerlink" title="不是那么好的好消息"></a>不是那么好的好消息</h3><p>IE8/Firefox3.5/Safari 4/Chrome 2都允许并行下载js文件，也就是说，script标签在下载外部资源时，不会阻塞其他的script标签。<br>遗憾的是：  </p>
-<ol>
-<li>js文件的下载过程仍然会阻塞其他资源的下载，比如图片。</li>
-<li>页面仍然必须等到所有js代码下载并执行完毕才能继续渲染。  </li>
-</ol>
-<p>因此，尽管浏览器通过允许并行下载提高了性能，但<strong>脚本阻塞仍然是一个问题</strong>。<br>综上，推荐将所有的script标签尽可能的放在body标签的底部，以尽量减少对整个页面渲染的影响。  </p>
-<h2 id="组织脚本"><a href="#组织脚本" class="headerlink" title="组织脚本"></a>组织脚本</h2><p>既然每个script标签初始下载时都会阻塞页面渲染，那么我们可以通过减少页面上script标签的数量来改善这一情况。不光是外链的脚本，内嵌脚本的数量同样也要限制（毕竟执行js代码也会阻塞页面的渲染）。<br>对于外链的脚本，这里的情况有一点需要额外注意的地方：考虑HTTP请求会带来额外的性能开销，所以下载单个100kb的文件要比下载四个25kb的文件更快。从这个角度出发，更能说明减少外链脚本文件的数量将会改善性能。<br>What u should do？合并脚本！  </p>
-<h2 id="无阻塞的脚本"><a href="#无阻塞的脚本" class="headerlink" title="无阻塞的脚本"></a>无阻塞的脚本</h2><p>随着web应用的功能越丰富，所需要的js代码就越多，所以精简源代码也并不总是可行。尽管下载单个较大的js文件只产生一次HTTP请求，但这样做却会锁死浏览器一大段时间。<br>为了避免这种情况，需要向页面中逐步加载js文件，这样做，在某种程度上来说不会阻塞浏览器。  </p>
-<h3 id="延迟的脚本"><a href="#延迟的脚本" class="headerlink" title="延迟的脚本"></a>延迟的脚本</h3><p>HTML4为script标签定义了一个扩展属性：defer。<strong>Defer表明本元素所含的脚本不会修改DOM，因此代码能安全的延迟执行</strong>。<br>带有defer属性的script标签可以放在文档的任何位置（不会阻塞浏览器的其他进程，此类文件可以与页面中的其他资源并行下载），对应的js代码将在页面解析到script标签时开始下载，但并不会执行，（onload事件被出发前）才会执行。<br>PS：截至这本书的第一版（2010年11月），这个属性对IE和Firefox的支持性比较好（我的天居然有IE），如果真要投入到实际的项目中，不妨先去检查一下浏览器的兼容性先~  </p>
-<h3 id="动态脚本元素"><a href="#动态脚本元素" class="headerlink" title="动态脚本元素"></a>动态脚本元素</h3><pre><code class="javascript"><span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);
-script.type = <span class="string">'text/javascript'</span>;
-script.src = <span class="string">'js_file.js'</span>;
-<span class="built_in">document</span>.getElementsByTagName(<span class="string">'body'</span>)[<span class="number">0</span>].appendChild(script);
-</code></pre>
-<p>Firefox/Opera/Chrome和Safari 3+会在script元素接收完成时出发一个load事件，所以你可以通过监听这个事件来获得脚本加载完成时的状态：  </p>
-<pre><code class="javascript">script.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-    <span class="built_in">console</span>.log(<span class="string">'script loaded.'</span>);
-}
-</code></pre>
-<p>一向特立独行的IE自然有他的另一套：触发一个readystatechange事件。script元素提供一个readyState属性，有以下五种取值：  </p>
-<ol>
-<li>“uninitialized”</li>
-<li>“loading”</li>
-<li>“loaded”</li>
-<li>“interactive” 数据完成下载但尚不可用</li>
-<li>“complete”  </li>
-</ol>
-<p>所以，  </p>
-<pre><code class="javascript">script.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-    <span class="keyword">if</span> (script.readyState == <span class="string">'loaded'</span> || script.readyState == <span class="string">'complete'</span>){
-        script.onreadystatechange = <span class="literal">null</span>;
-        <span class="built_in">console</span>.log(<span class="string">'script loaded.'</span>);
-    }
-}
-</code></pre>
-<p>至此，我们得到了一个可以应用于广泛浏览器的动态加载脚本用的函数：  </p>
-<pre><code class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">loadScript</span>(<span class="params">url, callback</span>)</span>{
-    <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);
-    script.type = <span class="string">'text/javascript'</span>;
-
-    <span class="keyword">if</span> (script.readyState){<span class="comment">//IE</span>
-        script.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-            <span class="keyword">if</span> (script.readyState == <span class="string">'loaded'</span> || script.readyState == <span class="string">'complete'</span>){
-                script.onreadystatechange = <span class="literal">null</span>;
-                callback();
-            }
-        }
-    }<span class="keyword">else</span>{
-        script.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-            callback();
-        }
-    }
-}
-</code></pre>
-<p>可以这么用：  </p>
-<pre><code class="javascript">loadScript(<span class="string">'file.js'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-    <span class="built_in">console</span>.log(<span class="string">'script loaded.'</span>);
-});
-</code></pre>
-<p>也可以这么用：  </p>
-<pre><code class="javascript">loadScript(<span class="string">'file_1.js'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-    loadScript(<span class="string">'file_2.js'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-        loadScript(<span class="string">'file_3.js'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-            <span class="built_in">console</span>.log(<span class="string">'all files are loaded.'</span>);
-        });
-    });
-});
-</code></pre>
-<h3 id="XMLHttpRequest脚本注入"><a href="#XMLHttpRequest脚本注入" class="headerlink" title="XMLHttpRequest脚本注入"></a>XMLHttpRequest脚本注入</h3><p>标题看起来很高大上的样子，其实就是Ajax。  </p>
-<pre><code class="javascript"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();
-xhr.open(<span class="string">'get'</span>,<span class="string">'file.js'</span>,<span class="literal">true</span>);
-xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-    <span class="keyword">if</span> (xhr.readyState == <span class="number">4</span>){
-        <span class="keyword">if</span> (xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span> || xhr.status == <span class="number">304</span>){
-            <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);
-            script.type = <span class="string">'text/javascript'</span>;
-            script.text = xhr.responseText;
-            <span class="built_in">document</span>.body.appendChild(script);
-        }
-    }
-};
-xhr.send(<span class="literal">null</span>);
-</code></pre>
-<p>局限：跨域问题。  </p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul>
-<li>body闭合标签之前，将所有的script标签放到页面底部。这样能确保在脚本执行前页面已经完成了渲染。</li>
-<li>合并脚本。页面中的script标签越少，加载也就越快，响应也更迅速。</li>
-<li>无阻塞下载js：  <ol>
-<li>script标签的defer属性</li>
-<li>动态创建script元素来下载并执行代码</li>
-<li>使用XHR对象下载js代码并注入页面中。</li>
-</ol>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://kyrieliu.cn/huno/huno/2016/12/12/redux-vol-2/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="劉凯里">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="http://kyrieliu.cn/images/kyrieliu.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Kyrie On">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Kyrie On" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/huno/2016/12/12/redux-vol-2/" itemprop="url">
-                  Redux学习笔记-Vol.2-基础
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-12T13:09:56+08:00">
-                2016-12-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/huno/categories/fe/" itemprop="url" rel="index">
-                    <span itemprop="name">fe</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h2><p><strong>Action是把数据从应用传到store的有效载荷</strong>。<br>它是store数据的唯一来源，一般通过<strong>store.dispatch()</strong>将action传到store。<br>举个栗子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> ADD_TODO = <span class="string">'ADD_TODO'</span>;</div><div class="line"><span class="comment">//一个action可以表达为：</span></div><div class="line">&#123;</div><div class="line">    <span class="attr">type</span>: ADD_TODO,</div><div class="line">    <span class="attr">text</span>: <span class="string">'Build my first Redux app'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>说白了，action就是一个普通的javascript对象，但是有一点要注意：<strong>约定这个表示action的对象必须有一个type字段，来表示将要执行的动作。</strong><br><strong>尽量减少在action中传递数据</strong>  </p>
-<h3 id="Action-Creator"><a href="#Action-Creator" class="headerlink" title="Action Creator"></a>Action Creator</h3><p>Action Creator就是生成action的方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">addTodo</span>(<span class="params">text</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">type</span>: <span class="string">'ADD_TODO'</span>,</div><div class="line">        text</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>在Redux中，只需把action creator的结果返回给<strong>dispatch()</strong>即可发起一次dispatch过程。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dispatch(addTodo(text));</div></pre></td></tr></table></figure></p>
-<p>或者，创建一个被绑定的action creator来自动dispatch：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> boundAddTodo = <span class="function">(<span class="params">text</span>) =&gt;</span> dispatch(addTodo(text));</div><div class="line">boundAddTodo();</div></pre></td></tr></table></figure></p>
-<p>目前为止，我们写好了一个action.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//action type</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> ADD_TODO = <span class="string">'ADD_TODO'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> TOGGLE_TODO = <span class="string">'TOGGLE_TODO'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> SET_VISIBILITY_FILTER = <span class="string">'SET_VISIBILITY_FILTER'</span>;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//其它常量</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">const</span> VisibilityFilters = &#123;</div><div class="line">    <span class="attr">SHOW_ALL</span>: <span class="string">'SHOW_ALL'</span>,</div><div class="line">    <span class="attr">SHOW_COMPLETED</span>: <span class="string">'SHOW_COMPLETED'</span>,</div><div class="line">    <span class="attr">SHOW_ACTIVE</span>: <span class="string">'SHOW_ACTIVE'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//action creator</span></div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">addTodo</span>(<span class="params">text</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">type</span>: ADD_TODO,</div><div class="line">        text</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">toggleTodo</span>(<span class="params">index</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">type</span>: TOGGLE_TODO,</div><div class="line">        index</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">setVisibilityFilter</span>(<span class="params">filter</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">type</span>: SET_VISIBILITY_FILTER,</div><div class="line">        filter</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="Reducer"><a href="#Reducer" class="headerlink" title="Reducer"></a>Reducer</h2><p>有了action以后，现在需要reducer来指明如何更新state。  </p>
-<h3 id="State结构"><a href="#State结构" class="headerlink" title="State结构"></a>State结构</h3><p>要明确的一点是，在Redux应用中，<strong>所有的state都被保存在一个单一的对象中。</strong><br>举个栗子，一个todo应用，需要保存两种不同的数据  </p>
-<ul>
-<li>当前选中的任务过滤条件  </li>
-<li>完整的任务列表  </li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">visiibilityFilter</span>: <span class="string">'SHOW_ALL'</span>,</div><div class="line">    <span class="attr">todos</span>: [</div><div class="line">        &#123;</div><div class="line">            <span class="attr">text</span>: <span class="string">'Consider using Redux'</span>,</div><div class="line">            <span class="attr">complete</span>: <span class="literal">true</span></div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">            <span class="attr">text</span>: <span class="string">'Keep all state in a single tree'</span>,</div><div class="line">            <span class="attr">complete</span>: <span class="literal">false</span></div><div class="line">        &#125;</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="处理action"><a href="#处理action" class="headerlink" title="处理action"></a>处理action</h3><p>Reducer是一个<strong>纯函数</strong>，接受旧的state和action，返回新的state，形如：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(previousState, action) =&gt; newState</div></pre></td></tr></table></figure></p>
-<p>保持reducer纯净非常重要，<strong>永远不要</strong>在reducer中做这些操作：  </p>
-<ul>
-<li>修改传入的参数  </li>
-<li>执行有副作用的操作，如API请求和路由跳转  </li>
-<li>调用非纯函数，如<em>Date.now()</em>或<em>Math.random()</em>  </li>
-</ul>
-<p>一个纯净的reducer是什么样的呢？<br><strong>只要传入的参数相同，返回计算得到的下一个state就一定相同。</strong><br>好，开始写reducer。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; VisibilityFilters &#125; <span class="keyword">from</span> <span class="string">'./actions'</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> initialState = &#123;</div><div class="line">    <span class="attr">visibilityFilter</span>: VisibilityFilter.SHOW_ALL,</div><div class="line">    <span class="attr">todo</span>: []</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">todoApp</span>(<span class="params">state = initialState, action</span>)</span>&#123;</div><div class="line">    <span class="keyword">switch</span> (action.type)&#123;</div><div class="line">        <span class="keyword">case</span> SET_VISIBILITY_FILTER:</div><div class="line">            <span class="keyword">return</span>  <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</div><div class="line">                <span class="attr">visibilityFilter</span>: action.filter</div><div class="line">            &#125;);</div><div class="line">        <span class="keyword">default</span>:</div><div class="line">            <span class="keyword">return</span> state;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>注意：  </p>
-<ol>
-<li><strong>不要修改state。</strong>上面的代码中只是使用<strong>Object.assign()</strong>创建了一个副本。  </li>
-<li>在<strong>default</strong>的情况下，返回旧的state。<strong>在未知的情况下，一定要返回旧的state！</strong>  </li>
-</ol>
-<h3 id="处理多个action"><a href="#处理多个action" class="headerlink" title="处理多个action"></a>处理多个action</h3><p>先增加两个<em>ADD_TODO</em>和<em>TOGGLE_TODO</em><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">case</span> ADD_TODO:</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</div><div class="line">        <span class="attr">todos</span>: [</div><div class="line">            ...state.todos,<span class="comment">//ES6大法好</span></div><div class="line">            &#123;</div><div class="line">                <span class="attr">text</span>: action.text,</div><div class="line">                <span class="attr">complete</span>: <span class="literal">false</span></div><div class="line">            &#125;</div><div class="line">        ]</div><div class="line">    &#125;);</div><div class="line">    </div><div class="line"><span class="keyword">case</span> TOGGLE_TODO:</div><div class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</div><div class="line">        <span class="attr">todos</span>: state.todos.map(<span class="function"><span class="keyword">function</span>(<span class="params">todo, index</span>)</span>&#123;</div><div class="line">            <span class="keyword">if</span> (index === action.index)&#123;</div><div class="line">                <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, todo, &#123;</div><div class="line">                    <span class="attr">completed</span>: !todo.completed;</div><div class="line">                &#125;);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">return</span> todo;</div><div class="line">        &#125;);</div><div class="line">    &#125;);</div></pre></td></tr></table></figure></p>
-<h3 id="拆分reducer"><a href="#拆分reducer" class="headerlink" title="拆分reducer"></a>拆分reducer</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">todos</span>(<span class="params">state = [], action</span>)</span>&#123;</div><div class="line">    <span class="keyword">switch</span>(action.type)&#123;</div><div class="line">        <span class="keyword">case</span> ADD_TODO:</div><div class="line">            <span class="keyword">return</span> [</div><div class="line">                ...state,</div><div class="line">                &#123;</div><div class="line">                    <span class="attr">text</span>: action.text,</div><div class="line">                    <span class="attr">completed</span>: <span class="literal">false</span></div><div class="line">                &#125;</div><div class="line">            ];</div><div class="line">        <span class="keyword">case</span> TOGGLE_TODO:</div><div class="line">            <span class="keyword">return</span> state.map(<span class="function"><span class="keyword">function</span>(<span class="params">todo, index</span>)</span>&#123;</div><div class="line">                <span class="keyword">if</span> (index === action.index)&#123;</div><div class="line">                    <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, todo, &#123;</div><div class="line">                        <span class="attr">completed</span>: !todo.completed</div><div class="line">                    &#125;);</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">return</span> todo;</div><div class="line">            &#125;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">todoApp</span>(<span class="params">state = initialState, action</span>)</span>&#123;</div><div class="line">    <span class="keyword">switch</span>(action.type)&#123;</div><div class="line">        <span class="keyword">case</span> SET_VISIBILITY_FILTER:</div><div class="line">            <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</div><div class="line">                <span class="attr">visibilityFilter</span>: action.filter</div><div class="line">            &#125;);</div><div class="line">        <span class="keyword">case</span> ADD_TODO:</div><div class="line">        <span class="keyword">case</span> TOGGLE_TODO:</div><div class="line">            <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, state, &#123;</div><div class="line">                <span class="attr">todos</span>: todos(state.todos, action)</div><div class="line">            &#125;);</div><div class="line">        <span class="keyword">default</span>:</div><div class="line">            <span class="keyword">return</span> state;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>todos依旧接受state，但是这里的state变成了一个数组，todoApp只把需要更新的那一部分state传给todos。这就是<strong>reducer合成</strong>，是开发Redux应用最基础的模式。<br>用同样的方法把visibilityFilter拆分出来：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">visibilityFilter</span>(<span class="params">state = SHOW_ALL, action</span>)</span>&#123;</div><div class="line">    <span class="keyword">switch</span>(action.type)&#123;</div><div class="line">        <span class="keyword">case</span> SET_VISIBILITY_FILTER:</div><div class="line">            <span class="keyword">return</span> action.filter;</div><div class="line">        <span class="keyword">default</span>:</div><div class="line">            <span class="keyword">return</span> state;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>然和修改总的reducer<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">todoApp</span>(<span class="params">state = &#123;&#125;, action</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        <span class="attr">visibilityFilter</span>: visibilityFilter(state.visibilityFilter, action),</div><div class="line">        <span class="attr">todos</span>: todos(state.todos, action)</div><div class="line">    &#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>合并的事，就交给Redux帮你来做：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; combineReducers &#125; <span class="keyword">from</span> <span class="string">'redux'</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> todoApp = combineReducers(&#123;</div><div class="line">    visibilityFilter,</div><div class="line">    todos</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> todoApp;</div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>ES6大法好<br><code>combineReducers</code>接受的是一个对象，返回一个函数。由此，我们可以把所有的顶级的reducer放到一个独立文件中，通&gt; &gt; 过<code>export</code>暴露出每个reducer函数，然后用<code>import * as reducer</code>引入一个以他们名字作为key的Object：</p>
-<pre><code class="javascript"><span class="keyword">import</span> { combineReducers } <span class="keyword">from</span> <span class="string">'redux'</span>;
-<span class="keyword">import</span> * <span class="keyword">as</span> reducer <span class="keyword">from</span> <span class="string">'./reducers'</span>;
-
-<span class="keyword">const</span> todoApp = combineReducers(reducer);
-<span class="comment">//ES6大法好！</span>
-</code></pre>
-</blockquote>
-<p>截至目前，我们得到了一个完整的<strong>reducers.js</strong> ↓  </p>
-<pre><code class="javascript"><span class="keyword">import</span> { combineReducers } <span class="keyword">from</span> <span class="string">'redux'</span>;
-<span class="keyword">import</span> { ADD_TODO, TOGGLE_TODO, SET_VISIBILITY_FILTER, VisibilityFilters } <span class="keyword">from</span> <span class="string">'./actions'</span>;
-
-<span class="function"><span class="keyword">function</span> <span class="title">visibilityFilters</span>(<span class="params">state = SHOW_ALL, action</span>)</span>{
-    <span class="keyword">switch</span>(action.type){
-        <span class="keyword">case</span> SET_VISIBILITY_FILTER:
-            <span class="keyword">return</span> action.filter;
-        <span class="keyword">default</span>:
-            <span class="keyword">return</span> state;
-    }
-}
-
-<span class="function"><span class="keyword">function</span> <span class="title">todos</span>(<span class="params">state = [], action</span>)</span>{
-    <span class="keyword">switch</span>(action.type){
-        <span class="keyword">case</span> ADD_TODO:
-            <span class="keyword">return</span> [
-                ...state,
-                {
-                    <span class="attr">text</span>: action.text,
-                    <span class="attr">completed</span>: <span class="literal">false</span>
-                }
-            ];
-        <span class="keyword">case</span> TOGGLE_TODO:
-            <span class="keyword">return</span> state.map(<span class="function"><span class="keyword">function</span>(<span class="params">todo, index</span>)</span>{
-                <span class="keyword">if</span> (index === action.index){
-                    <span class="keyword">return</span> <span class="built_in">Object</span>.assign({}, todo, {
-                        <span class="attr">completed</span>: !todo.completed
-                    });
-                }
-                <span class="keyword">return</span> todo;
-            });
-        <span class="keyword">default</span>:
-            <span class="keyword">return</span> state;
-    }
-}
-
-<span class="keyword">const</span> todoApp = combineReducer({
-    visibilityFilters,
-    todos
-});
-
-<span class="keyword">export</span> <span class="keyword">default</span> todoApp;
-</code></pre>
-<h2 id="Store"><a href="#Store" class="headerlink" title="Store"></a>Store</h2><p>在学Store之前，我们先来回顾一下<strong>action</strong>和<strong>reducer</strong>：  </p>
-<ul>
-<li>Action：用来表示“发生了什么”  </li>
-<li>Reducer：根据“发生了什么”来决定如何更新<strong>state</strong>。  </li>
-</ul>
-<p>现在需要知道的是，<strong>Store</strong>的作用就是上述两者联系起来。<br>关于Store的职责：  </p>
-<ul>
-<li>维持应用的<strong>state</strong></li>
-<li><code>getState()</code>方法用来获取state</li>
-<li><code>dispatch(action)</code>用来分发action，进而更新state  </li>
-<li><code>subscribe(listener)</code>注册reducer，并返回一个取消注册的函数  </li>
-</ul>
-<p>FYI：<strong>Redux只有一个单一的Store！</strong>当逻辑复杂需要拆分的时候，请对Reducer下手，科科。<br>Now，我们来根据已经写好了的reducer来创建store，so easy~  </p>
-<pre><code class="javascript"><span class="keyword">import</span> { createStore } <span class="keyword">from</span> <span class="string">'redux'</span>;
-<span class="keyword">import</span> todoApp <span class="keyword">from</span> <span class="string">'./reducers'</span>;
-
-<span class="keyword">let</span> store = createStore(todoApp);
-</code></pre>
-<p>createStore()方法可以的第二个参数是可选的，用于设置state的初始状态。  </p>
-<pre><code class="javascript"><span class="keyword">let</span> store = createStore(todoApp, initialState);
-</code></pre>
-<h3 id="发起actions"><a href="#发起actions" class="headerlink" title="发起actions"></a>发起actions</h3><p>现在我们已经有了一个store，来看一下怎么用。  </p>
-<pre><code class="javascript"><span class="keyword">import</span> { addTodo, toggleTodo } <span class="keyword">from</span> <span class="string">'./actions'</span>;
-
-<span class="comment">//获得state</span>
-store.getState();
-
-<span class="comment">//注册（订阅），state没触发一次更新，打印之</span>
-<span class="keyword">let</span> unsubscribe = store.subscribe(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-    <span class="built_in">console</span>.log(store.getState());
-});
-
-<span class="comment">//发起action</span>
-store.dispatch(addTodo(<span class="string">'finish your resume.'</span>));
-store.dispatch(toggleTodo(<span class="number">0</span>));
-
-<span class="comment">//停止监听state更新</span>
-unsubscribe();
-</code></pre>
-<p>看看这一part做了什么 ↓  </p>
-<pre><code class="javascript"><span class="comment">//创建了一个store（约定store只有一个！）</span>
-<span class="keyword">import</span> { createStore } <span class="keyword">from</span> <span class="string">'redux'</span>;
-<span class="keyword">import</span> todoApp <span class="keyword">from</span> <span class="string">'./reducers'</span>;
-
-<span class="keyword">let</span> store = createStore(todoApp);
-</code></pre>
-<h2 id="严格的单向数据流（Redux核心）"><a href="#严格的单向数据流（Redux核心）" class="headerlink" title="严格的单向数据流（Redux核心）"></a>严格的单向数据流（Redux核心）</h2><ol>
-<li>发起：<code>store.dispatch(action)</code>；</li>
-<li>传递：store将发起的action和当前的state传递给根reducer，根reducer再将这两个参数传递给子reducer们；</li>
-<li>更新：通过了子reducer们的各司其职以后，根reducer把他们的输出合并为一个单一的state树；</li>
-<li>保存：store将这个reducer返回的state保存起来，这一次的数据流结束。</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://kyrieliu.cn/huno/huno/2016/12/08/redux-vol-1/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="劉凯里">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="http://kyrieliu.cn/images/kyrieliu.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Kyrie On">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Kyrie On" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/huno/2016/12/08/redux-vol-1/" itemprop="url">
-                  Redux学习笔记-Vol.1-介绍
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-08T11:11:11+08:00">
-                2016-12-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/huno/categories/fe/" itemprop="url" rel="index">
-                    <span itemprop="name">fe</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><p>背景： 单页应用，<strong>js需要管理很多state</strong>。<br>两个概念： 变化和异步<br>和React相结合： React在视图层禁止异步并直接操作DOM，Redux处理state中的数据。<br>目的： <strong>Redux试图让state变化的可预测</strong>。  </p>
-<h2 id="三大原则"><a href="#三大原则" class="headerlink" title="三大原则"></a>三大原则</h2><h3 id="单一数据源"><a href="#单一数据源" class="headerlink" title="单一数据源"></a>单一数据源</h3><p>注意理解：<strong>整个应用的state被储存在一棵object tree中，并且这个object tree只存在于唯一一个store中。</strong></p>
-<h3 id="State是只读的"><a href="#State是只读的" class="headerlink" title="State是只读的"></a>State是只读的</h3><p><strong>唯一改变state的方法就是触发action，action是一个用于描述已发生事件的普通对象。</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">store.dispatch(&#123;</div><div class="line">    <span class="attr">type</span>: <span class="string">'ADD_ITEM'</span>,<span class="comment">//规定一个action对象中必须有的type属性</span></div><div class="line">    index: <span class="number">1</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h3 id="使用纯函数来执行修改"><a href="#使用纯函数来执行修改" class="headerlink" title="使用纯函数来执行修改"></a>使用纯函数来执行修改</h3><p>为了描述action如何改变state tree，需要编写<strong>reducers</strong>。<br>什么是reducers？</p>
-<blockquote>
-<p>纯函数，形如：(state, action) =&gt; state  </p>
-</blockquote>
-<p>随着应用的变大，注意将一个大的reducer拆分为多个小的reducers，分别独立操作state tree的不同部分。  </p>
-<pre><code class="javascript"><span class="comment">//reducer 1</span>
-<span class="function"><span class="keyword">function</span> <span class="title">visibilityFilter</span>(<span class="params">state = <span class="string">'SHOW_ALL'</span>, action</span>)</span>{
-    <span class="keyword">switch</span> (action.type){
-        <span class="keyword">case</span> <span class="string">'SET_VISIBILITY_FILTER'</span>:
-            <span class="keyword">return</span> action.filter;
-        <span class="keyword">default</span>:<span class="comment">//一定要有！不然会造成返回undefined的情况</span>
-            <span class="keyword">return</span> state;
-    }
-}
-
-<span class="comment">//reducer 2</span>
-<span class="function"><span class="keyword">function</span> <span class="title">todos</span>(<span class="params">action = [], action</span>)</span>{
-    <span class="keyword">switch</span> (action.type){
-        <span class="keyword">case</span> <span class="string">'ADD_TODO'</span>:
-            <span class="keyword">return</span> [
-                ...state,<span class="comment">//ES6大法好!</span>
-                {
-                    <span class="attr">text</span>: action.text,
-                    <span class="attr">complete</span>: <span class="literal">false</span>
-                }
-            ];
-        <span class="keyword">case</span> <span class="string">'COMPLETE_TODO'</span>:
-            <span class="keyword">return</span> state.map(<span class="function">(<span class="params">todo, index</span>) =&gt;</span> {
-                <span class="keyword">if</span> (index == action.index){
-                    <span class="keyword">return</span> <span class="built_in">Object</span>.assign({}, todo, {
-                        <span class="attr">complete</span>: <span class="literal">true</span>
-                    });
-                }
-                <span class="keyword">return</span> todo;
-            });
-        <span class="keyword">default</span>:
-            <span class="keyword">return</span> state;
-    }
-}
-
-<span class="keyword">import</span> { combineReducers, createStore } <span class="keyword">from</span> <span class="string">'redux'</span>;
-<span class="keyword">let</span> reducer = combineReducers({ visbilityFilter, todos });
-<span class="keyword">let</span> store = createStore(reducer);
-</code></pre>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://kyrieliu.cn/huno/huno/2016/12/06/writing-react-with-gulp/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="劉凯里">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="http://kyrieliu.cn/images/kyrieliu.jpg">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Kyrie On">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="Kyrie On" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/huno/2016/12/06/writing-react-with-gulp/" itemprop="url">
-                  纵享丝滑 | React with gulp
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-06T11:11:11+08:00">
-                2016-12-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/huno/categories/fe/" itemprop="url" rel="index">
-                    <span itemprop="name">fe</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h3><p>首先是肯定要有node滴（这不是废话吗Orz…），如果还没有安装的话请自行询问你最喜欢的搜索引擎，相信她一定会很优雅的告诉你如何在或Windows或Mac或Linux上安装Node哒。</p>
-<h3 id="Initialize-Your-Project"><a href="#Initialize-Your-Project" class="headerlink" title="Initialize Your Project"></a>Initialize Your Project</h3><p>进入项目的目录，然后 <strong>cnpm init</strong>，根据命令行的提示创建项目的package.json文件，当然了，你也可以自己手动创建这个文件（讲道理，应该很少人会这么做吧…）。我用的是<del>npm</del> cnpm，它在国内可以完美的代替npm，并且获得更快的包安装速度，详情请访问<a href="https://npm.taobao.org/" target="_blank" rel="external">淘宝镜像官网。</a>  </p>
-<h3 id="Install-Gulp"><a href="#Install-Gulp" class="headerlink" title="Install Gulp"></a>Install Gulp</h3><p>接下来就要安装gulp了，我首先进行全局安装: <strong>cnpm install -g gulp</strong>。<br>全局安装的目的是为了通过它来执行gulp任务。<br>Next，本地安装: <strong>cnpm install –save-dev gulp</strong>  </p>
-<p>安装完成之后打开package.json文件，就会发现gulp被写在了devDependencies字段里，成为项目的开发阶段依赖。本地安装gulp的目的是为了成功的用gulp插件。  </p>
-<h3 id="Install-Gulp-Plugins"><a href="#Install-Gulp-Plugins" class="headerlink" title="Install Gulp Plugins"></a>Install Gulp Plugins</h3><p>Gulp是一款用来实现自动化的构建工具，诸如压缩代码、合并脚本、自动刷新等任务，都是通过gulp在项目中调用各种各样的插件来实现的。正所谓工欲善其事必先利其器，工欲利其器必先get其器，先来安装这些插件吧 ↓<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cnpm install --save-dev browserify vinyl-source-stream babelify babel-preset-es2015 babel-preset-react gulp-streamify gulp-uglifyjs gulp-connect</div></pre></td></tr></table></figure></p>
-<p>一口气装了这么多插件，他们都是干什么的呢？  </p>
-<ol>
-<li>browserify: 实现浏览器端的模块和依赖管理——约定用require()来引用模块，用module.exports来导出模块。</li>
-<li>vinyl-source-stream: 这个插件的作用是转换流模式，如果我们需要将gulp及gulp插件和常规的可读流一起使用，就需要先把可读流转换为vinyl。  </li>
-<li>babelify, babel-preset-es2015, babel-preset-react: 用来编译es6以及react的jsx为浏览器可以识别的js。  </li>
-<li>gulp-streamify: 将当前插件的输出转化为可读流，使得其后的只能操作可读流的插件正常工作。  </li>
-<li>gulp-connect: 起服务器+自动刷新的一条龙服务。</li>
-<li>gulp-uglifyjs: 看名字就知道了，丑化js。</li>
-</ol>
-<h3 id="Edit-your-Gulpfile-js"><a href="#Edit-your-Gulpfile-js" class="headerlink" title="Edit your Gulpfile.js"></a>Edit your Gulpfile.js</h3><p>gulp会根据gulpfile.js这个文件去执行用户自定义的gulp任务，所以这是整个gulp构建中最重要的一步。<br>Talk is cheap, show u the code:  </p>
-<pre><code class="javascript"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);
-<span class="keyword">var</span> connect = <span class="built_in">require</span>(<span class="string">'gulp-connect'</span>);
-<span class="keyword">var</span> browserify = <span class="built_in">require</span>(<span class="string">'browserify'</span>);
-<span class="keyword">var</span> source = <span class="built_in">require</span>(<span class="string">'vinyl-source-stream'</span>);
-<span class="keyword">var</span> babelify = <span class="built_in">require</span>(<span class="string">'babelify'</span>);
-<span class="keyword">var</span> uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglifyjs'</span>);
-<span class="keyword">var</span> streamify = <span class="built_in">require</span>(<span class="string">'gulp-streamify'</span>);
-
-gulp.task(<span class="string">'connect'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{<span class="comment">//起服务器</span>
-        connect.server({
-                <span class="attr">root</span>: <span class="string">'./'</span>,
-                <span class="attr">port</span>: <span class="string">'3000'</span>,
-                <span class="attr">livereload</span>: <span class="literal">true</span>,
-                <span class="attr">host</span>: <span class="string">'localhost'</span>
-        });
-});
-
-gulp.task(<span class="string">'bundle'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-        <span class="keyword">return</span> browserify({<span class="attr">entries</span>: <span class="string">'./src/main.js'</span>, <span class="attr">extensions</span>: [<span class="string">'jsx'</span>], <span class="attr">debug</span>: <span class="literal">true</span>})
-                .transform(babelify,{
-                        <span class="attr">presets</span>: [<span class="string">'es2015'</span>,<span class="string">'react'</span>]
-                })
-                <span class="comment">//.transform(require('browserify-shim'))</span>
-                .bundle()
-                .pipe(source(<span class="string">'bundle.js'</span>))
-                .pipe(streamify(uglify()))
-                .pipe(gulp.dest(<span class="string">'./dist'</span>))
-                .pipe(connect.reload());
-});
-
-gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-        <span class="keyword">var</span> watcher = gulp.watch([<span class="string">'./src/*.js'</span>,<span class="string">'./src/*/*.js'</span>],[<span class="string">'bundle'</span>]);
-        watcher.on(<span class="string">'change'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>{
-                <span class="built_in">console</span>.log(event.path + <span class="string">' was '</span> + event.type + <span class="string">', bundle again...'</span>);
-        });
-});
-
-gulp.task(<span class="string">'default'</span>,[<span class="string">'bundle'</span>,<span class="string">'connect'</span>,<span class="string">'watch'</span>]);
-</code></pre>
-<p>就是这样一个gulpfile.js文件，帮我们实现了:</p>
-<ol>
-<li>先将es6和jsx编译成es5（反正是浏览器可以读懂的js）;</li>
-<li>再将代码打包成dist目录下的bundle.js并丑化之（当然，如果在开发过程中没有丑化代码的需求的话也可以不要这一步），所以在html文件中就只需要引用bundle这个js文件就可以了:);</li>
-<li>最后实现对代码的监听，若发生变动则自动重新打包再刷新浏览器，对手动刷新say goodbye，纵享丝滑。  </li>
-</ol>
-<p>这里注意到在bundle任务中有一行任务被注释掉了，解释一下：因为项目依赖了React（react + react-dom），所以当执行完一次bundle任务后，在不压缩的情况下，打包成的bundle.js有1M左右，压缩后也有200k。这行被注释掉的代码，其作用就是在打包的时候忽略依赖的库或框架，这样就能大大缩小打包结果文件的体积，但是如果要这么做，你需要：  </p>
-<ul>
-<li>在html文件中用script标签引入被忽略模块</li>
-<li>为package.json文件增加配置，说明需要忽略的模块。  </li>
-</ul>
-<p>将所有的任务写在一个名为<strong>default</strong>的gulp任务内，保证在命令行只需要敲一个<strong>gulp</strong>就可以执行所有的任务。  </p>
-<h3 id="Gulp！"><a href="#Gulp！" class="headerlink" title="Gulp！"></a>Gulp！</h3><p>现在已经完成了所有的工作了，接下来的事情就交给gulp去做吧。<br>进入项目目录，输入命令：<strong>gulp</strong><br>现在你就可以专心于coding啦。  </p>
-<h3 id="What-U-Always-Need-to-Do-↓"><a href="#What-U-Always-Need-to-Do-↓" class="headerlink" title="What U Always Need to Do ↓"></a>What U Always Need to Do ↓</h3><ol>
-<li>Make sure u have installed Nodejs  </li>
-<li>Use <del>npm init</del> <strong>cnpm init</strong> to initialize ur project  </li>
-<li>Install gulp  </li>
-<li>Install the gulp plugins u need  </li>
-<li>Edit ur <strong>gulpfile.js</strong>  </li>
-<li>Run <strong>gulp</strong></li>
-</ol>
-
           
+用脚本进行DOM操作的代价是很昂贵的，它是富web应用中最常见的性能瓶颈。主要有以下三种问题：  
+
+访问和修改DOM元素
+修改DOM元素的样式导致repaint和reflow
+通过DOM事件处理与用户进行交互  
+
+
+浏览器中的DOMDOM是（Document Object Model）一个与语言无关的、用来操作XML和HTML文档的应用程序接口（Application Program Int
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/huno/2017/02/06/HPJS-vol-2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2359,7 +1011,7 @@ gulp.task(<span class="string">'default'</span>,[<span class="string">'bundle'</
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/huno/page/2/">2</a><a class="extend next" rel="next" href="/huno/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/huno/page/2/">2</a><a class="page-number" href="/huno/page/3/">3</a><a class="extend next" rel="next" href="/huno/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2402,7 +1054,7 @@ gulp.task(<span class="string">'default'</span>,[<span class="string">'bundle'</
           
             <div class="site-state-item site-state-posts">
               <a href="/huno/archives">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2603,6 +1255,19 @@ gulp.task(<span class="string">'default'</span>,[<span class="string">'bundle'</
   
 
   
+
+  
+  
+  
+  <link rel="stylesheet" href="/huno/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/huno/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/huno/js/src/algolia-search.js?v=5.1.0"></script>
+
 
 
 </body>

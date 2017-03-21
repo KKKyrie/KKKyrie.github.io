@@ -122,7 +122,7 @@ script标签是一个很“霸道”的狠角色，它的每次出现都让页�
       applicationID: '',
       apiKey: '',
       indexName: '',
-      hits: {"per_page":10},
+      hits: {"per_page":5},
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
@@ -212,9 +212,47 @@ script标签是一个很“霸道”的狠角色，它的每次出现都让页�
       
 
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
     </ul>
   
 
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
   
 </nav>
 
@@ -569,7 +607,7 @@ xhr.send(<span class="literal">null</span>);
           
             <div class="site-state-item site-state-posts">
               <a href="/huno/archives">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -794,6 +832,19 @@ xhr.send(<span class="literal">null</span>);
   
 
   
+
+  
+  
+  
+  <link rel="stylesheet" href="/huno/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/huno/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/huno/js/src/algolia-search.js?v=5.1.0"></script>
+
 
 
 </body>

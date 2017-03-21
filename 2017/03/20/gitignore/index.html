@@ -84,22 +84,16 @@
 
 
 
-<meta name="description" content="动机背景： 单页应用，js需要管理很多state。两个概念： 变化和异步和React相结合： React在视图层禁止异步并直接操作DOM，Redux处理state中的数据。目的： Redux试图让state变化的可预测。  
-三大原则单一数据源注意理解：整个应用的state被储存在一棵object tree中，并且这个object tree只存在于唯一一个store中。
-State是只读的唯一改变">
+<meta name="description" content="惯例逼叨逼这个周末跟着部门去团建了，最喜欢的项目其实是在宾馆里打王者农药，因为这件事情说出来都有一丝浓浓的消极怠工的味道。不知怎么的，以往最乐衷于做的事情——一边听歌一边看车窗外的风景，这次也被我用上车就睡的姿势取代了，也正是我为什么这个点写了一个推送。由于此次分享的知识点之小巧，我都不好意思转发到朋友圈，如果你看到了这篇推送，我只能真诚的隔着手机屏幕对你说一句，“在项目繁多的公共号列表里，你还能">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Redux学习笔记-Vol.1-介绍">
-<meta property="og:url" content="http://kyrieliu.cn/huno/2016/12/08/redux-vol-1/index.html">
+<meta property="og:title" content="你的.gitignore失效了吗？">
+<meta property="og:url" content="http://kyrieliu.cn/huno/2017/03/20/gitignore/index.html">
 <meta property="og:site_name" content="Kyrie On">
-<meta property="og:description" content="动机背景： 单页应用，js需要管理很多state。两个概念： 变化和异步和React相结合： React在视图层禁止异步并直接操作DOM，Redux处理state中的数据。目的： Redux试图让state变化的可预测。  
-三大原则单一数据源注意理解：整个应用的state被储存在一棵object tree中，并且这个object tree只存在于唯一一个store中。
-State是只读的唯一改变">
-<meta property="og:updated_time" content="2016-12-30T15:39:07.925Z">
+<meta property="og:description" content="惯例逼叨逼这个周末跟着部门去团建了，最喜欢的项目其实是在宾馆里打王者农药，因为这件事情说出来都有一丝浓浓的消极怠工的味道。不知怎么的，以往最乐衷于做的事情——一边听歌一边看车窗外的风景，这次也被我用上车就睡的姿势取代了，也正是我为什么这个点写了一个推送。由于此次分享的知识点之小巧，我都不好意思转发到朋友圈，如果你看到了这篇推送，我只能真诚的隔着手机屏幕对你说一句，“在项目繁多的公共号列表里，你还能">
+<meta property="og:updated_time" content="2017-03-21T09:30:26.940Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Redux学习笔记-Vol.1-介绍">
-<meta name="twitter:description" content="动机背景： 单页应用，js需要管理很多state。两个概念： 变化和异步和React相结合： React在视图层禁止异步并直接操作DOM，Redux处理state中的数据。目的： Redux试图让state变化的可预测。  
-三大原则单一数据源注意理解：整个应用的state被储存在一棵object tree中，并且这个object tree只存在于唯一一个store中。
-State是只读的唯一改变">
+<meta name="twitter:title" content="你的.gitignore失效了吗？">
+<meta name="twitter:description" content="惯例逼叨逼这个周末跟着部门去团建了，最喜欢的项目其实是在宾馆里打王者农药，因为这件事情说出来都有一丝浓浓的消极怠工的味道。不知怎么的，以往最乐衷于做的事情——一边听歌一边看车窗外的风景，这次也被我用上车就睡的姿势取代了，也正是我为什么这个点写了一个推送。由于此次分享的知识点之小巧，我都不好意思转发到朋友圈，如果你看到了这篇推送，我只能真诚的隔着手机屏幕对你说一句，“在项目繁多的公共号列表里，你还能">
 
 
 
@@ -127,13 +121,13 @@ State是只读的唯一改变">
 
 
 
-  <link rel="canonical" href="http://kyrieliu.cn/huno/2016/12/08/redux-vol-1/"/>
+  <link rel="canonical" href="http://kyrieliu.cn/huno/2017/03/20/gitignore/"/>
 
 
 
 
 
-  <title> Redux学习笔记-Vol.1-介绍 | Kyrie On </title>
+  <title> 你的.gitignore失效了吗？ | Kyrie On </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -274,7 +268,7 @@ State是只读的唯一改变">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://kyrieliu.cn/huno/huno/2016/12/08/redux-vol-1/">
+  <link itemprop="mainEntityOfPage" href="http://kyrieliu.cn/huno/huno/2017/03/20/gitignore/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="劉凯里">
@@ -298,7 +292,7 @@ State是只读的唯一改变">
             
             
               
-                Redux学习笔记-Vol.1-介绍
+                你的.gitignore失效了吗？
               
             
           </h1>
@@ -313,8 +307,8 @@ State是只读的唯一改变">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-08T11:11:11+08:00">
-                2016-12-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-20T02:15:01+08:00">
+                2017-03-20
               </time>
             
 
@@ -371,53 +365,15 @@ State是只读的唯一改变">
       
 
       
-        <h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><p>背景： 单页应用，<strong>js需要管理很多state</strong>。<br>两个概念： 变化和异步<br>和React相结合： React在视图层禁止异步并直接操作DOM，Redux处理state中的数据。<br>目的： <strong>Redux试图让state变化的可预测</strong>。  </p>
-<h2 id="三大原则"><a href="#三大原则" class="headerlink" title="三大原则"></a>三大原则</h2><h3 id="单一数据源"><a href="#单一数据源" class="headerlink" title="单一数据源"></a>单一数据源</h3><p>注意理解：<strong>整个应用的state被储存在一棵object tree中，并且这个object tree只存在于唯一一个store中。</strong></p>
-<h3 id="State是只读的"><a href="#State是只读的" class="headerlink" title="State是只读的"></a>State是只读的</h3><p><strong>唯一改变state的方法就是触发action，action是一个用于描述已发生事件的普通对象。</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">store.dispatch(&#123;</div><div class="line">    <span class="attr">type</span>: <span class="string">'ADD_ITEM'</span>,<span class="comment">//规定一个action对象中必须有的type属性</span></div><div class="line">    index: <span class="number">1</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h3 id="使用纯函数来执行修改"><a href="#使用纯函数来执行修改" class="headerlink" title="使用纯函数来执行修改"></a>使用纯函数来执行修改</h3><p>为了描述action如何改变state tree，需要编写<strong>reducers</strong>。<br>什么是reducers？</p>
-<blockquote>
-<p>纯函数，形如：(state, action) =&gt; state  </p>
-</blockquote>
-<p>随着应用的变大，注意将一个大的reducer拆分为多个小的reducers，分别独立操作state tree的不同部分。  </p>
-<pre><code class="javascript"><span class="comment">//reducer 1</span>
-<span class="function"><span class="keyword">function</span> <span class="title">visibilityFilter</span>(<span class="params">state = <span class="string">'SHOW_ALL'</span>, action</span>)</span>{
-    <span class="keyword">switch</span> (action.type){
-        <span class="keyword">case</span> <span class="string">'SET_VISIBILITY_FILTER'</span>:
-            <span class="keyword">return</span> action.filter;
-        <span class="keyword">default</span>:<span class="comment">//一定要有！不然会造成返回undefined的情况</span>
-            <span class="keyword">return</span> state;
-    }
-}
-
-<span class="comment">//reducer 2</span>
-<span class="function"><span class="keyword">function</span> <span class="title">todos</span>(<span class="params">action = [], action</span>)</span>{
-    <span class="keyword">switch</span> (action.type){
-        <span class="keyword">case</span> <span class="string">'ADD_TODO'</span>:
-            <span class="keyword">return</span> [
-                ...state,<span class="comment">//ES6大法好!</span>
-                {
-                    <span class="attr">text</span>: action.text,
-                    <span class="attr">complete</span>: <span class="literal">false</span>
-                }
-            ];
-        <span class="keyword">case</span> <span class="string">'COMPLETE_TODO'</span>:
-            <span class="keyword">return</span> state.map(<span class="function">(<span class="params">todo, index</span>) =&gt;</span> {
-                <span class="keyword">if</span> (index == action.index){
-                    <span class="keyword">return</span> <span class="built_in">Object</span>.assign({}, todo, {
-                        <span class="attr">complete</span>: <span class="literal">true</span>
-                    });
-                }
-                <span class="keyword">return</span> todo;
-            });
-        <span class="keyword">default</span>:
-            <span class="keyword">return</span> state;
-    }
-}
-
-<span class="keyword">import</span> { combineReducers, createStore } <span class="keyword">from</span> <span class="string">'redux'</span>;
-<span class="keyword">let</span> reducer = combineReducers({ visbilityFilter, todos });
-<span class="keyword">let</span> store = createStore(reducer);
-</code></pre>
+        <h3 id="惯例逼叨逼"><a href="#惯例逼叨逼" class="headerlink" title="惯例逼叨逼"></a>惯例逼叨逼</h3><p>这个周末跟着部门去团建了，最喜欢的项目其实是在宾馆里打王者农药，因为这件事情说出来都有一丝浓浓的消极怠工的味道。<br>不知怎么的，以往最乐衷于做的事情——一边听歌一边看车窗外的风景，这次也被我用上车就睡的姿势取代了，也正是我为什么这个点写了一个推送。<br>由于此次分享的知识点之小巧，我都不好意思转发到朋友圈，如果你看到了这篇推送，我只能真诚的隔着手机屏幕对你说一句，“在项目繁多的公共号列表里，你还能看到我，缘分呐！”  </p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>上周在公司政策的庇护下，我开心的划了两天水。在周五晚上临走前，准备看一下这两天项目的进度，顺便merge一下，结果发现同事上传了一些不该上传的文件。<br>在指出了这个问题之后，我下意识的去修改<strong>.gitignore</strong>，然后按部就班的commit + push。<br>看一眼结果，有点懵，这些文件居然还在远程仓库中…<br>于是下意识的打开stackoverflow找了一下问题的原由。</p>
+<h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>之所以会失效，是由于.gitignore只能忽略那些原来没有被track的文件。换言之，如果一个文件已经被加入到了本地仓库中（被加入了版本管理），则修改.gitignore是无效的。<br>这又是为什么呢？<br>瞬间联想到了在调试页面时，浏览器对脚本文件的缓存会导致浏览器不去请求修改后的脚本，所以造成了修改失效的假象。<br>所以，问题的根源就在于本地git仓库对已添加到版本管理文件的记录缓存（cache）。<br>既然找到了问题的原因，那么解决方案也随之浮出水面了：  </p>
+<pre><code>$ git rm -r --cached .
+$ git add .
+$ git commit -m &apos;something u want to say about this commit&apos;
+$ git push origin branch-name
+</code></pre><p><strong>Problem solved.</strong>  </p>
+<h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3><p>如果你是在第一时间看到了这篇推送，赶紧睡吧，毕竟 <del>明天</del> 今天是周一。<br>Goodnight :)</p>
 
       
     </div>
@@ -449,8 +405,8 @@ State是只读的唯一改变">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/huno/2016/12/06/writing-react-with-gulp/" rel="next" title="纵享丝滑 | React with gulp">
-                <i class="fa fa-chevron-left"></i> 纵享丝滑 | React with gulp
+              <a href="/huno/2017/03/01/git-u-should-know/" rel="next" title="关于git你该知道的">
+                <i class="fa fa-chevron-left"></i> 关于git你该知道的
               </a>
             
           </div>
@@ -458,10 +414,6 @@ State是只读的唯一改变">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/huno/2016/12/12/redux-vol-2/" rel="prev" title="Redux学习笔记-Vol.2-基础">
-                Redux学习笔记-Vol.2-基础 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -597,7 +549,7 @@ State是只读的唯一改变">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#动机"><span class="nav-number">1.</span> <span class="nav-text">动机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三大原则"><span class="nav-number">2.</span> <span class="nav-text">三大原则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单一数据源"><span class="nav-number">2.1.</span> <span class="nav-text">单一数据源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#State是只读的"><span class="nav-number">2.2.</span> <span class="nav-text">State是只读的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用纯函数来执行修改"><span class="nav-number">2.3.</span> <span class="nav-text">使用纯函数来执行修改</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#惯例逼叨逼"><span class="nav-number">1.</span> <span class="nav-text">惯例逼叨逼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">2.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决"><span class="nav-number">3.</span> <span class="nav-text">解决</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写在最后"><span class="nav-number">4.</span> <span class="nav-text">写在最后</span></a></li></ol></div>
             
 
           </div>
