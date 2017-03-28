@@ -84,22 +84,49 @@
 
 
 
-<meta name="description" content="动机背景： 单页应用，js需要管理很多state。两个概念： 变化和异步和React相结合： React在视图层禁止异步并直接操作DOM，Redux处理state中的数据。目的： Redux试图让state变化的可预测。  
-三大原则单一数据源注意理解：整个应用的state被储存在一棵object tree中，并且这个object tree只存在于唯一一个store中。
-State是只读的唯一改变">
+<meta name="description" content="git vs svn
+git 是分布式的
+分支的不同  
+svn 中分支就是版本库中的另一个目录
+git 中的分支简单有趣，可以在同一个目录下快速的在几个分支之间切换
+
+
+
+gulp vs webpack其实，gulp和webpack不是一回事  
+
+gulp和grunt是一类，是工具，能够优化前端工作流，比如自动刷新页面、combo、uglify等。  
+webpack和browserify是一">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Redux学习笔记-Vol.1-介绍">
-<meta property="og:url" content="http://kyrieliu.cn/huno/2016/12/08/redux-vol-1/index.html">
+<meta property="og:title" content="关于一次SPA项目的反思">
+<meta property="og:url" content="http://kyrieliu.cn/huno/2017/03/27/juzicode/index.html">
 <meta property="og:site_name" content="Kyrie On">
-<meta property="og:description" content="动机背景： 单页应用，js需要管理很多state。两个概念： 变化和异步和React相结合： React在视图层禁止异步并直接操作DOM，Redux处理state中的数据。目的： Redux试图让state变化的可预测。  
-三大原则单一数据源注意理解：整个应用的state被储存在一棵object tree中，并且这个object tree只存在于唯一一个store中。
-State是只读的唯一改变">
-<meta property="og:updated_time" content="2016-12-30T15:39:07.925Z">
+<meta property="og:description" content="git vs svn
+git 是分布式的
+分支的不同  
+svn 中分支就是版本库中的另一个目录
+git 中的分支简单有趣，可以在同一个目录下快速的在几个分支之间切换
+
+
+
+gulp vs webpack其实，gulp和webpack不是一回事  
+
+gulp和grunt是一类，是工具，能够优化前端工作流，比如自动刷新页面、combo、uglify等。  
+webpack和browserify是一">
+<meta property="og:updated_time" content="2017-03-28T06:19:50.333Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Redux学习笔记-Vol.1-介绍">
-<meta name="twitter:description" content="动机背景： 单页应用，js需要管理很多state。两个概念： 变化和异步和React相结合： React在视图层禁止异步并直接操作DOM，Redux处理state中的数据。目的： Redux试图让state变化的可预测。  
-三大原则单一数据源注意理解：整个应用的state被储存在一棵object tree中，并且这个object tree只存在于唯一一个store中。
-State是只读的唯一改变">
+<meta name="twitter:title" content="关于一次SPA项目的反思">
+<meta name="twitter:description" content="git vs svn
+git 是分布式的
+分支的不同  
+svn 中分支就是版本库中的另一个目录
+git 中的分支简单有趣，可以在同一个目录下快速的在几个分支之间切换
+
+
+
+gulp vs webpack其实，gulp和webpack不是一回事  
+
+gulp和grunt是一类，是工具，能够优化前端工作流，比如自动刷新页面、combo、uglify等。  
+webpack和browserify是一">
 
 
 
@@ -127,13 +154,13 @@ State是只读的唯一改变">
 
 
 
-  <link rel="canonical" href="http://kyrieliu.cn/huno/2016/12/08/redux-vol-1/"/>
+  <link rel="canonical" href="http://kyrieliu.cn/huno/2017/03/27/juzicode/"/>
 
 
 
 
 
-  <title> Redux学习笔记-Vol.1-介绍 | Kyrie On </title>
+  <title> 关于一次SPA项目的反思 | Kyrie On </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -236,7 +263,7 @@ State是只读的唯一改变">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://kyrieliu.cn/huno/huno/2016/12/08/redux-vol-1/">
+  <link itemprop="mainEntityOfPage" href="http://kyrieliu.cn/huno/huno/2017/03/27/juzicode/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="劉凯里">
@@ -260,7 +287,7 @@ State是只读的唯一改变">
             
             
               
-                Redux学习笔记-Vol.1-介绍
+                关于一次SPA项目的反思
               
             
           </h1>
@@ -275,8 +302,8 @@ State是只读的唯一改变">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-08T11:11:11+08:00">
-                2016-12-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-27T14:35:01+08:00">
+                2017-03-27
               </time>
             
 
@@ -333,53 +360,69 @@ State是只读的唯一改变">
       
 
       
-        <h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><p>背景： 单页应用，<strong>js需要管理很多state</strong>。<br>两个概念： 变化和异步<br>和React相结合： React在视图层禁止异步并直接操作DOM，Redux处理state中的数据。<br>目的： <strong>Redux试图让state变化的可预测</strong>。  </p>
-<h2 id="三大原则"><a href="#三大原则" class="headerlink" title="三大原则"></a>三大原则</h2><h3 id="单一数据源"><a href="#单一数据源" class="headerlink" title="单一数据源"></a>单一数据源</h3><p>注意理解：<strong>整个应用的state被储存在一棵object tree中，并且这个object tree只存在于唯一一个store中。</strong></p>
-<h3 id="State是只读的"><a href="#State是只读的" class="headerlink" title="State是只读的"></a>State是只读的</h3><p><strong>唯一改变state的方法就是触发action，action是一个用于描述已发生事件的普通对象。</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">store.dispatch(&#123;</div><div class="line">    <span class="attr">type</span>: <span class="string">'ADD_ITEM'</span>,<span class="comment">//规定一个action对象中必须有的type属性</span></div><div class="line">    index: <span class="number">1</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<h3 id="使用纯函数来执行修改"><a href="#使用纯函数来执行修改" class="headerlink" title="使用纯函数来执行修改"></a>使用纯函数来执行修改</h3><p>为了描述action如何改变state tree，需要编写<strong>reducers</strong>。<br>什么是reducers？</p>
+        <h2 id="git-vs-svn"><a href="#git-vs-svn" class="headerlink" title="git vs svn"></a>git vs svn</h2><ul>
+<li><strong>git 是分布式的</strong></li>
+<li>分支的不同  <ol>
+<li>svn 中分支就是版本库中的另一个目录</li>
+<li>git 中的分支<strong>简单有趣</strong>，可以在同一个目录下快速的在几个分支之间切换</li>
+</ol>
+</li>
+</ul>
+<h2 id="gulp-vs-webpack"><a href="#gulp-vs-webpack" class="headerlink" title="gulp vs webpack"></a>gulp vs webpack</h2><p>其实，gulp和webpack<strong>不是一回事</strong>  </p>
+<ul>
+<li>gulp和grunt是一类，是<strong>工具</strong>，能够<strong>优化前端工作流</strong>，比如自动刷新页面、combo、uglify等。  </li>
+<li>webpack和browserify是一类，当然了还有sea.js / require.js，是js的<strong>模块化方案</strong>。当然了，从名字都能看出来，这四者也可以分为两个阵营：<ul>
+<li>sea.js / require.js：一种“在线编译”的方案，相当于在页面上首先家在一个CMD / AMD 的解释器，让浏览器知道诸如 define、 exports、 module 都是用来做什么的。</li>
+<li>webpack / browserify：一种“预编译”方案，不需要在浏览器中提前加载好一个解释器，直接在开发环境下写js，AMD / CMD / ES6 都认识，并且编译成为浏览器可以正常执行的js。</li>
+</ul>
+</li>
+</ul>
+<p>总之，gulp是<strong>构建工具</strong>，webpack是<strong>模块化方案</strong>。<br>但随着webpack傍上了React和Vue的大腿，其生态也越发繁荣，各种loaders和plugins层出不穷，已经可以很好的替代gulp的工作了。<br>之前在网上看到过一位uber的前端工程师说过一段话，甚是经典：  </p>
 <blockquote>
-<p>纯函数，形如：(state, action) =&gt; state  </p>
+<p>grunt: 我资历最老<br>gulp: 我有stream，我快快快  </p>
+<p>browserify: 我支持common.js，简单好用<br>webpack: 我快快快  </p>
 </blockquote>
-<p>随着应用的变大，注意将一个大的reducer拆分为多个小的reducers，分别独立操作state tree的不同部分。  </p>
-<pre><code class="javascript"><span class="comment">//reducer 1</span>
-<span class="function"><span class="keyword">function</span> <span class="title">visibilityFilter</span>(<span class="params">state = <span class="string">'SHOW_ALL'</span>, action</span>)</span>{
-    <span class="keyword">switch</span> (action.type){
-        <span class="keyword">case</span> <span class="string">'SET_VISIBILITY_FILTER'</span>:
-            <span class="keyword">return</span> action.filter;
-        <span class="keyword">default</span>:<span class="comment">//一定要有！不然会造成返回undefined的情况</span>
-            <span class="keyword">return</span> state;
-    }
-}
-
-<span class="comment">//reducer 2</span>
-<span class="function"><span class="keyword">function</span> <span class="title">todos</span>(<span class="params">action = [], action</span>)</span>{
-    <span class="keyword">switch</span> (action.type){
-        <span class="keyword">case</span> <span class="string">'ADD_TODO'</span>:
-            <span class="keyword">return</span> [
-                ...state,<span class="comment">//ES6大法好!</span>
-                {
-                    <span class="attr">text</span>: action.text,
-                    <span class="attr">complete</span>: <span class="literal">false</span>
-                }
-            ];
-        <span class="keyword">case</span> <span class="string">'COMPLETE_TODO'</span>:
-            <span class="keyword">return</span> state.map(<span class="function">(<span class="params">todo, index</span>) =&gt;</span> {
-                <span class="keyword">if</span> (index == action.index){
-                    <span class="keyword">return</span> <span class="built_in">Object</span>.assign({}, todo, {
-                        <span class="attr">complete</span>: <span class="literal">true</span>
-                    });
-                }
-                <span class="keyword">return</span> todo;
-            });
-        <span class="keyword">default</span>:
-            <span class="keyword">return</span> state;
-    }
-}
-
-<span class="keyword">import</span> { combineReducers, createStore } <span class="keyword">from</span> <span class="string">'redux'</span>;
-<span class="keyword">let</span> reducer = combineReducers({ visbilityFilter, todos });
-<span class="keyword">let</span> store = createStore(reducer);
-</code></pre>
+<h2 id="SPA"><a href="#SPA" class="headerlink" title="SPA"></a>SPA</h2><ul>
+<li>前后端职责分离，架构清晰：前端交互、后端逻辑处理</li>
+<li>前后端单独开发、单独测试</li>
+<li>良好的交互体验（局部渲染），避免了不必要的跳转和重复渲染。</li>
+<li>缺点：不利于SEO、首次加载速度慢（都有相应的应对策略，暂不做讨论）</li>
+</ul>
+<h2 id="为什么选择-Vue"><a href="#为什么选择-Vue" class="headerlink" title="为什么选择 Vue"></a>为什么选择 Vue</h2><ul>
+<li>React Virtual DOM</li>
+<li>Angular Data Binding</li>
+</ul>
+<h2 id="MVVM-数据绑定"><a href="#MVVM-数据绑定" class="headerlink" title="MVVM 数据绑定"></a>MVVM 数据绑定</h2><p>本质：<strong>通过数据绑定连接 view 和 model，让数据的变化自动映射为视图的更新</strong><br>过程：在模版编译的过程中，vue会为每一处需要动态更新的DOM节点创建一个指令对象。每当一个指令对象观测的数据变化时，它便会对所绑定的目标节点执行相对应的DOM操作。基于指令的数据绑定使得具体的DOM操作都被合理的封装在指令定义中，所以我们的业务代码只需要涉及模版和对数据状态的操作即可，<strong>开发效率和可维护性大大提升</strong>。<br><strong>借助vue-loader</strong>，可以实现vue单文件组件系统。  </p>
+<h2 id="开发阶段"><a href="#开发阶段" class="headerlink" title="开发阶段"></a>开发阶段</h2><p>脱离了实践的理论都是废话，有些东西只有自己搞出来才算是自己的。  </p>
+<h3 id="开发环境的搭建"><a href="#开发环境的搭建" class="headerlink" title="开发环境的搭建"></a>开发环境的搭建</h3><p><strong>技术栈： Vue + Webpack + PHP + Mysql</strong><br>第一部分是先开发前端，所以随便建了个目录就开搞了，但是一旦到了需要决定协议的阶段，就不得不起一个本地服务器了。<br>用phpStudy开本地服务器，注意要将目录指到开发目录。  </p>
+<h3 id="页面重构"><a href="#页面重构" class="headerlink" title="页面重构"></a>页面重构</h3><ul>
+<li>从简</li>
+<li>Bootstrap</li>
+<li>仿照微博</li>
+<li>分割组件，构建组件树（components tree）</li>
+<li>Vue 列表渲染  </li>
+</ul>
+<h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><ul>
+<li>坑爹的字符编码（中文显示乱码问题，utf-8）</li>
+<li>前期考虑不充分，导致后期表结构变更</li>
+</ul>
+<h3 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h3><ul>
+<li>字符插入数据库时对单引号的处理<ol>
+<li>magic_quotes_gpc=on</li>
+<li>magic_quotes_gpc=off, addslashes，不需要stripslashes</li>
+</ol>
+</li>
+<li><p>设置数据库字符集</p>
+  <figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql_query(<span class="string">"set character set 'utf8'"</span>);  </div><div class="line">mysql_query(<span class="string">"set names 'utf8'"</span>);</div></pre></td></tr></table></figure>
+</li>
+<li><p>数据的拼装（设计表结构时留下的小坑）</p>
+</li>
+</ul>
+<h3 id="组件间通信"><a href="#组件间通信" class="headerlink" title="组件间通信"></a>组件间通信</h3><ul>
+<li>父组件向子组件传递数据（v-for 列表渲染）</li>
+<li>子组件触发父组件的事件（父组件v-on监听，子组件$emit触发）</li>
+<li>兄弟组件间的通信（借助共用父组件）</li>
+</ul>
 
       
     </div>
@@ -411,8 +454,8 @@ State是只读的唯一改变">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/huno/2016/12/06/writing-react-with-gulp/" rel="next" title="纵享丝滑 | React with gulp">
-                <i class="fa fa-chevron-left"></i> 纵享丝滑 | React with gulp
+              <a href="/huno/2017/03/20/gitignore/" rel="next" title="你的.gitignore失效了吗？">
+                <i class="fa fa-chevron-left"></i> 你的.gitignore失效了吗？
               </a>
             
           </div>
@@ -420,10 +463,6 @@ State是只读的唯一改变">
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/huno/2016/12/12/redux-vol-2/" rel="prev" title="Redux学习笔记-Vol.2-基础">
-                Redux学习笔记-Vol.2-基础 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -559,7 +598,7 @@ State是只读的唯一改变">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#动机"><span class="nav-number">1.</span> <span class="nav-text">动机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三大原则"><span class="nav-number">2.</span> <span class="nav-text">三大原则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单一数据源"><span class="nav-number">2.1.</span> <span class="nav-text">单一数据源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#State是只读的"><span class="nav-number">2.2.</span> <span class="nav-text">State是只读的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用纯函数来执行修改"><span class="nav-number">2.3.</span> <span class="nav-text">使用纯函数来执行修改</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-vs-svn"><span class="nav-number">1.</span> <span class="nav-text">git vs svn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gulp-vs-webpack"><span class="nav-number">2.</span> <span class="nav-text">gulp vs webpack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SPA"><span class="nav-number">3.</span> <span class="nav-text">SPA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么选择-Vue"><span class="nav-number">4.</span> <span class="nav-text">为什么选择 Vue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVVM-数据绑定"><span class="nav-number">5.</span> <span class="nav-text">MVVM 数据绑定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发阶段"><span class="nav-number">6.</span> <span class="nav-text">开发阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开发环境的搭建"><span class="nav-number">6.1.</span> <span class="nav-text">开发环境的搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页面重构"><span class="nav-number">6.2.</span> <span class="nav-text">页面重构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库"><span class="nav-number">6.3.</span> <span class="nav-text">数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PHP"><span class="nav-number">6.4.</span> <span class="nav-text">PHP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组件间通信"><span class="nav-number">6.5.</span> <span class="nav-text">组件间通信</span></a></li></ol></li></ol></div>
             
 
           </div>
