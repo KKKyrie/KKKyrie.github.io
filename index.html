@@ -23,7 +23,7 @@
             (function() {
                 var hm = document.createElement("script");
                 hm.src = "https://hm.baidu.com/hm.js?de26c4972d56371ff1500a2c522b9e36";
-                var s = document.getElementsByTagName("script")[0]; 
+                var s = document.getElementsByTagName("script")[0];
                 s.parentNode.insertBefore(hm, s);
             })();
         </script>
@@ -48,12 +48,12 @@
                             <!-- <a href="https://weibo.com/kkkyrie" target="_blank" title="微博"><i class="icon-weibo icon-2x"></i></a> -->
                             <!-- <a href="http://www.renren.com/347621420" target="_blank" title="人人网"><i class="icon-renren icon-2x"></i></a> -->
                             <a href="https://www.github.com/kkkyrie" target="_blank" title="github"><i class="icon-github icon-2x"></i></a>
-                            <a href="mailto:kyrieliu02@163.com" target="_self" title="给kyrieliu发邮件"><i class="icon-envelope icon-2x"></i></a> 
+                            <a href="mailto:kyrieliu02@163.com" target="_self" title="给kyrieliu发邮件"><i class="icon-envelope icon-2x"></i></a>
                          </p>
                      </div>
                      <div class="links">
                         <p>
-                            <a href="http://mp.weixin.qq.com/mp/homepage?__biz=MzIwNTU3NTI4Ng==&hid=1&sn=aa0799da2f2abe970373526219ce6d50#wechat_redirect" target="_self">Enter</a> 
+                            <a href="http://mp.weixin.qq.com/mp/homepage?__biz=MzIwNTU3NTI4Ng==&hid=1&sn=aa0799da2f2abe970373526219ce6d50#wechat_redirect" target="_self">Enter</a>
                             <!-- <a href="./about.html" target="_blank">关于</a>  -->
                         </p>
                      </div>
@@ -65,7 +65,7 @@
                  </div>
         </div>
 
-        <script src='./js/motto.min.js'></script>
+        <script src="./js/motto.min.js"></script>
         <script>
             var kyrieliu = new Motto('#title_name',{
                 lyric: 'kyrieliu',
@@ -79,6 +79,18 @@
                 showUpSpeed: 50,
                 flashSpeed: 50,
                 flashTimeout: 100
+            });
+        </script>
+        <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+        <script>
+            wx.onMenuShareAppMessage({
+                title: 'test',
+                desc: 'testestest',
+                link: 'kyrieliu.cn',
+                imgUrl: '',
+                type: 'link',
+                success: function(){},
+                cancel: function(){]}
             });
         </script>
     </body>
