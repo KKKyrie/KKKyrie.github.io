@@ -93,11 +93,11 @@
                 flashTimeout: 100
             });
 
-            document.querySelector('#enter_btn').addEventListener(function(ev){
+            document.querySelector('#enter_btn').addEventListener('click', function(ev){
                 ev.preventDefault();
                 MtaH5.clickStat("enter_btn_click")
                 location.href = "http://mp.weixin.qq.com/mp/homepage?__biz=MzIwNTU3NTI4Ng==&hid=1&sn=aa0799da2f2abe970373526219ce6d50#wechat_redirect";
-            });
+            }, false);
         </script>
     </body>
 </html>
