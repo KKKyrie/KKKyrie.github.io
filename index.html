@@ -53,8 +53,7 @@
                      </div>
                      <div class="links">
                         <p>
-                            <a href="http://mp.weixin.qq.com/mp/homepage?__biz=MzIwNTU3NTI4Ng==&hid=1&sn=aa0799da2f2abe970373526219ce6d50#wechat_redirect" target="_self">Enter</a>
-                            <!-- <a href="./about.html" target="_blank">关于</a>  -->
+                            <a id="enter_btn">Enter</a>
                         </p>
                      </div>
                      <hr class="splitline_75" />
@@ -64,6 +63,19 @@
                      </div>
                  </div>
         </div>
+
+        <!-- mobile tencent analytics -->
+        <script>
+            var _mtac = {};
+            (function() {
+                var mta = document.createElement("script");
+                mta.src = "http://pingjs.qq.com/h5/stats.js?v2.0.2";
+                mta.setAttribute("name", "MTAH5");
+                mta.setAttribute("sid", "500545346");
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(mta, s);
+            })();
+        </script>
 
         <script src="./js/motto.min.js"></script>
         <script>
@@ -80,19 +92,12 @@
                 flashSpeed: 50,
                 flashTimeout: 100
             });
-        </script>
 
-        <!-- mobile tencent analytics -->
-        <script>
-            var _mtac = {};
-            (function() {
-                var mta = document.createElement("script");
-                mta.src = "http://pingjs.qq.com/h5/stats.js?v2.0.2";
-                mta.setAttribute("name", "MTAH5");
-                mta.setAttribute("sid", "500545346");
-                var s = document.getElementsByTagName("script")[0];
-                s.parentNode.insertBefore(mta, s);
-            })();
+            document.querySelector('#enter_btn').addEventListener(function(ev){
+                ev.preventDefault();
+                MtaH5.clickStat("enter_btn_click")
+                location.href = "http://mp.weixin.qq.com/mp/homepage?__biz=MzIwNTU3NTI4Ng==&hid=1&sn=aa0799da2f2abe970373526219ce6d50#wechat_redirect";
+            });
         </script>
     </body>
 </html>
