@@ -54,12 +54,13 @@
 
         <!-- mobile tencent analytics -->
         <script>
-            var _mtac = {};
+            var _mtac = {"senseHash":0,"autoReport":0};
             (function() {
                 var mta = document.createElement("script");
-                mta.src = "https://pingjs.qq.com/h5/stats.js?v2.0.2";
+                mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
                 mta.setAttribute("name", "MTAH5");
                 mta.setAttribute("sid", "500545346");
+                mta.setAttribute("cid", "500545354");
                 var s = document.getElementsByTagName("script")[0];
                 s.parentNode.insertBefore(mta, s);
             })();
@@ -102,7 +103,7 @@
                 var blog = 'https://kyrieliu.cn/blog/';
 
                 if (typeof MtaH5 !== 'undefined'){
-                    MtaH5.clickStat("enter_btn_click")
+                    MtaH5.clickStat('enter_btn_click');
                 }
                 
                 location.href = isPhone ? subscription : blog;
