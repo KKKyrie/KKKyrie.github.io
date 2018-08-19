@@ -82,7 +82,7 @@
                 flashTimeout: 100
             });
 
-            function isPhone() {
+            var isPhone = (function(){
                 var flag = false;
                 var ua = navigator.userAgent;
                 var Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
@@ -93,7 +93,7 @@
                     }
                 }
                 return flag;
-            }
+            })();
 
             document.querySelector('#enter_btn').addEventListener('click', function(ev){
                 ev.preventDefault();
@@ -105,7 +105,7 @@
                     MtaH5.clickStat("enter_btn_click")
                 }
                 
-                location.href = isPhone() ? subscription : blog;
+                location.href = isPhone ? subscription : blog;
             }, false);
         </script>
     </body>
