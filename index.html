@@ -18,42 +18,44 @@
 
     <body>
         <div class="container-fluid">
-                 <div id = "main" class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-                     <div class="header">
-                        <p><img src="./images/head.jpg" class="img-circle"></p>
-                     </div>
-                     <div class="title">
-                         <h1><a href="" target="_self" id="title_name"></a></h1>
-                     </div>
-                     <hr class="splitline_25" />
-                     <div class="desc">
-                         <p><i class="icon-quote-left"></i> <span id='des_motto'></span> <i class="icon-quote-right"></i></p>
-                     </div>
-                     <hr class="splitline_50" />
-                     <div class="sns">
-                         <p>
-                            <a href="./images/mp.jpg" target="_blank" title="微信公众号"><i class="icon-comments icon-2x"></i></a>
-                            <!-- <a href="https://weibo.com/kkkyrie" target="_blank" title="微博"><i class="icon-weibo icon-2x"></i></a> -->
-                            <!-- <a href="http://www.renren.com/347621420" target="_blank" title="人人网"><i class="icon-renren icon-2x"></i></a> -->
-                            <a href="https://www.github.com/kkkyrie" target="_blank" title="github"><i class="icon-github icon-2x"></i></a>
-                            <a href="mailto:kkkyrieliu@163.com" target="_self" title="给kyrieliu发邮件"><i class="icon-envelope icon-2x"></i></a>
-                         </p>
-                     </div>
-                     <div class="links">
-                        <p>
-                            <a id="enter_btn">Enter</a>
-                        </p>
-                     </div>
-                     <hr class="splitline_75" />
-
-                     <div class="copyright">
-                         <p>Make with <i class="icon-heart"></i> by kyrieliu</p>
-                     </div>
-                 </div>
+            <div id = "main" class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+                <div class="header">
+                    <p><img src="./images/head.jpg" class="img-circle"></p>
+                </div>
+                <div class="title">
+                    <h1><a href="" target="_self" id="title_name"></a></h1>
+                </div>
+                <hr class="splitline_25" />
+                <div class="desc">
+                    <p><i class="icon-quote-left"></i> <span id='des_motto'></span> <i class="icon-quote-right"></i></p>
+                </div>
+                <hr class="splitline_50" />
+                <div class="sns">
+                    <p>
+                        <a href="./images/mp.jpg" target="_blank" title="微信公众号"><i class="icon-comments icon-2x"></i></a>
+                        <!-- <a href="https://weibo.com/kkkyrie" target="_blank" title="微博"><i class="icon-weibo icon-2x"></i></a> -->
+                        <!-- <a href="http://www.renren.com/347621420" target="_blank" title="人人网"><i class="icon-renren icon-2x"></i></a> -->
+                        <a href="https://www.github.com/kkkyrie" target="_blank" title="github"><i class="icon-github icon-2x"></i></a>
+                        <a href="mailto:kkkyrieliu@163.com" target="_self" title="给kyrieliu发邮件"><i class="icon-envelope icon-2x"></i></a>
+                    </p>
+                </div>
+                <div class="links">
+                    <p>
+                        <a id="enter_btn">Enter</a>
+                    </p>
+                </div>
+                <hr class="splitline_75" />
+                <div class="copyright">
+                    <p>Make with <i class="icon-heart"></i> by kyrieliu</p>
+                </div>
+            </div>
         </div>
 
-        <!-- mobile tencent analytics -->
+        <script src="./js/motto.min.js"></script>
         <script>
+            var TIME_FLAG = 'Own JavaScript execute time consuming';
+            console.time(TIME_FLAG);
+            // mobile tencent analytics
             var _mtac = {"senseHash":0,"autoReport":0};
             (function() {
                 var mta = document.createElement("script");
@@ -64,11 +66,7 @@
                 var s = document.getElementsByTagName("script")[0];
                 s.parentNode.insertBefore(mta, s);
             })();
-        </script>
 
-        <script src="./js/motto.min.js"></script>
-
-        <script>
             var kyrieliu = new Motto('#title_name',{
                 lyric: 'kyrieliu',
                 showUpSpeed: 100,
@@ -108,6 +106,8 @@
                 
                 location.href = isPhone ? subscription : blog;
             }, false);
+
+            console.timeEnd(TIME_FLAG);
         </script>
     </body>
 </html>
