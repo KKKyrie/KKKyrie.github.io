@@ -5,6 +5,16 @@
     padding-left: 0px;
 }
 
+*{
+    -moz-user-select: none;
+    -o-user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+
+}
+
+
 @media screen and (max-width: 1140px){
     body{
         background-color: gray;
@@ -120,6 +130,7 @@ body {
     text-align: center;
     font-size: 17px;
     padding-top: 10px;
+    cursor: pointer;
 }
 .links p a {
     color: #FFFFFF;

@@ -1,0 +1,26 @@
+{
+  "name": "kyrieliu-blog-entrance",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KKKyrie/KKKyrie.github.io.git"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "kyrieliu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KKKyrie/KKKyrie.github.io/issues"
+  },
+  "homepage": "https://github.com/KKKyrie/KKKyrie.github.io#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.6.1"
+  }
+}
