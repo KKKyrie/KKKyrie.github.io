@@ -53,6 +53,7 @@
 		_bindEvent: function(){
 			var that = this;
 			var button = that._find('#enter_btn');
+			if (!button) return;
 			button.addEventListener('click', function(ev){
 				ev.preventDefault();
 				if (typeof MtaH5 !== 'undefined'){
