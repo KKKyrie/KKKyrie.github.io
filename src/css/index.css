@@ -131,7 +131,7 @@ body {
     	background: url(https://kyrieliu.cn/images/web_heart_animation.png) 0 0 no-repeat;
     	background-size: 2900%;
     	animation: heart-burst steps(28) 0.8s infinite both;
-	vartical-align: middle;
+	vertical-align: middle;
 }
 
 @keyframes heart-burst {
