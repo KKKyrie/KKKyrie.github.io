@@ -126,8 +126,8 @@ body {
 
 .copyright .heart-beat {
 	display: inline-block;
-	width: 1.2em;
-	height: 1.2em;
+	width: 3em;
+	height: 3em;
     	background: url(https://kyrieliu.cn/images/web_heart_animation.png) 0 0 no-repeat;
     	background-size: 2900%;
     	animation: heart-burst steps(28) 0.8s infinite both;
