@@ -125,7 +125,7 @@ body {
 }
 
 .copyright .heart-beat {
-	display: block;
+	display: inline-block;
 	width: 1.2em;
 	height: 1.2em;
     	background: url(https://kyrieliu.cn/images/web_heart_animation.png) 0 0 no-repeat;
