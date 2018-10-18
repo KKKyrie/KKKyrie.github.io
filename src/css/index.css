@@ -124,6 +124,24 @@ body {
 	height: 1.2em;
 }
 
+.copyright .heart-beat {
+	display: block;
+	width: 1.2em;
+	height: 1.2em;
+    	background: url(https://kyrieliu.cn/images/web_heart_animation.png) 0 0 no-repeat;
+    	background-size: 2900%;
+    	animation: heart-burst steps(28) 0.8s infinite both;
+}
+
+@keyframes heart-burst {
+    0% {
+    	background-position: 0%;
+    }
+    100% {
+      background-position: 100%;
+    }
+}
+
 .icon-heart{
     color: #d32;
 }
