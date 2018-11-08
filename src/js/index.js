@@ -14,7 +14,7 @@
 
 		_data: {
 			_isPhone: false,
-			_subscriptionUrl: 'https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIwNTU3NTI4Ng==#wechat_redirect',
+			_subscriptionUrl: 'https://mp.weixin.qq.com/mp/homepage?__biz=MzIwNTU3NTI4Ng==&hid=1&sn=aa0799da2f2abe970373526219ce6d50#wechat_redirect',
 			_blogUrl: 'https://kyrieliu.cn/blog/'
 		},
 
