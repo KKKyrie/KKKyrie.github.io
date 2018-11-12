@@ -8,6 +8,10 @@
 		window.kyrieliu = kyrieliu;
 	}, false);
 
+	window.addEventListener('visibilitychange', function() {
+		document.title = document.hidden ? '你要走了吗？' : 'Kyrie On';
+	}, false);
+
 	var KKKyrie = function() {};
 
 	KKKyrie.prototype = {
