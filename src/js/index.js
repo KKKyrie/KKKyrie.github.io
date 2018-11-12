@@ -1,14 +1,14 @@
-(function(){
+(function() {
 	var TIME_FLAG = 'Own JavaScript execute time consuming';
-    console.time(TIME_FLAG);
+	console.time(TIME_FLAG);
 
-	window.addEventListener('load', function(ev){
+	window.addEventListener('load', function(ev) {
 		var kyrieliu = new KKKyrie();
 		kyrieliu.init();
 		window.kyrieliu = kyrieliu;
 	}, false);
 
-	var KKKyrie = function(){};
+	var KKKyrie = function() {};
 
 	KKKyrie.prototype = {
 
@@ -18,26 +18,26 @@
 			_blogUrl: 'https://kyrieliu.cn/blog/'
 		},
 
-		_find: function(element){
+		_find: function(element) {
 			return document.querySelector(element);
 		},
 
 		/* tencent statistics */
-		_addStatistics: function(){
+		_addStatistics: function() {
 			var _mtac = {
-				"senseHash": 0,
-				"autoReport": 0
+				'senseHash': 0,
+				'autoReport': 0
 			};
-			var mta = document.createElement("script");
-			mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
-			mta.setAttribute("name", "MTAH5");
-			mta.setAttribute("sid", "500545346");
-			mta.setAttribute("cid", "500545354");
-			var s = document.getElementsByTagName("script")[0];
+			var mta = document.createElement('script');
+			mta.src = '//pingjs.qq.com/h5/stats.js?v2.0.4';
+			mta.setAttribute('name', 'MTAH5');
+			mta.setAttribute('sid', '500545346');
+			mta.setAttribute('cid', '500545354');
+			var s = document.getElementsByTagName('script')[0];
 			s.parentNode.insertBefore(mta, s);
 		},
 
-		_judgeIsPhone: function(){
+		_judgeIsPhone: function() {
 			var flag = false;
 			var ua = navigator.userAgent;
 			var Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
@@ -50,24 +50,24 @@
 			this._data._isPhone = flag;
 		},
 
-		_bindEvent: function(){
+		_bindEvent: function() {
 			var that = this;
 			var button = that._find('#enter_btn');
 			if (!button) return;
-			button.addEventListener('click', function(ev){
+			button.addEventListener('click', function(ev) {
 				ev.preventDefault();
-				if (typeof MtaH5 !== 'undefined'){
-                    MtaH5.clickStat('enter_btn_click');
-                }
+				if (typeof MtaH5 !== 'undefined') {
+					MtaH5.clickStat('enter_btn_click');
+				}
 
-                var jump_url = that._data._isPhone ?
-				that._data._subscriptionUrl : 
-				that._data._blogUrl;
-                location.href = jump_url;
+				var jump_url = that._data._isPhone ?
+					that._data._subscriptionUrl :
+					that._data._blogUrl;
+				location.href = jump_url;
 			}, false);
 		},
 
-		init: function(){
+		init: function() {
 			this._judgeIsPhone();
 			this._addStatistics();
 			this._bindEvent();
@@ -77,4 +77,3 @@
 	console.timeEnd(TIME_FLAG);
 
 })();
-
