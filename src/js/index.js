@@ -100,7 +100,6 @@
 			const that = this;
 			const changeRainbow = that._generateRainbow();
 			document.onclick = changeRainbow;
-			document.ontouchstart = changeRainbow;
 			changeRainbow();
 			
 			const button = that._find('#enter_btn');
