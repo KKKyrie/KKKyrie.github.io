@@ -122,6 +122,7 @@
 			this._judgeIsPhone();
 			this._addStatistics();
 			this._bindEvent();
+			this._find('body').style.overflow = 'hidden';
 		}
 	};
 
