@@ -19,10 +19,5 @@
     "url": "https://github.com/KKKyrie/KKKyrie.github.io/issues"
   },
   "homepage": "https://github.com/KKKyrie/KKKyrie.github.io#readme",
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.10.0",
-    "gulp-connect": "^5.6.1",
-    "gulp-minify": "^3.1.0"
-  }
+  "devDependencies": {}
 }
