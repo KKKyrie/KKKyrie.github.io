@@ -18,7 +18,9 @@
 
 		_data: {
 			_isPhone: false,
+			_isWechat: false,
 			_subscriptionUrl: 'https://mp.weixin.qq.com/mp/homepage?__biz=MzIwNTU3NTI4Ng==&hid=1&sn=aa0799da2f2abe970373526219ce6d50#wechat_redirect',
+			_subscriptionHomeUrl: 'https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzIwNTU3NTI4Ng==#wechat_redirect',
 			_blogUrl: 'https://blog.kyrieliu.cn'
 		},
 
@@ -44,6 +46,9 @@
 		_judgeIsPhone: function() {
 			let flag = false;
 			const ua = navigator.userAgent;
+			if (/MicroMessenger/i.test(ua)) {
+				this._data._isWechat = true;
+			}
 			const Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
 			for (let i = 0; i < Agents.length; i++) {
 				if (ua.indexOf(Agents[i]) > 0) {
@@ -110,11 +115,14 @@
 				if (typeof MtaH5 !== 'undefined') {
 					MtaH5.clickStat('enter_btn_click');
 				}
-
-				const jump_url = that._data._isPhone ?
-					that._data._subscriptionUrl :
-					that._data._blogUrl;
-				location.href = jump_url;
+				
+				let jumpUrl = '';
+				if (that._data._isWechat) {
+					jumpUrl = that._data._subscriptionHomeUrl;
+				} else {
+					jumpUrl = that._data._isPhone ? that._data._subscriptionUrl : that._data._blogUrl;
+				}
+				location.href = jumpUrl;
 			}, false);
 		},
 
